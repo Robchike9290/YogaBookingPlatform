@@ -20,7 +20,7 @@ export default function Home() {
   }, [])
 
   return (
-    <RootLayout>
+    <RootLayout className="bg-blue-800">
       <TitleBar />
       <br />
       <NavBar />

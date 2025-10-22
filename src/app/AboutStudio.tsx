@@ -51,17 +51,21 @@ const studioBios = [
 export default function AboutStudio(props: AboutStudioPropTypes) {
     return (
         <div className="col-start-3 col-span-3 row-start-1 row-span-3 p-8 m-8 border-blue-300 border-4 bg-blue-100 rounded-lg text-center text-blue-600">
-            <h1 className="font-bold text-2xl">{props.studioName}</h1>
+            <h1 className="font-bold text-3xl mb-8">{props.studioName}</h1>
             <div>{studioBios.map((studioBio) => {
                 if (props.studioName === studioBio.name) {
                     return (
                         <div className="flex-auto">
-                            <h2 className="font-bold text-xl pt-8">Our Studio</h2>
-                            <div>{studioBio.studioBio}</div>
-                            <img className="m-8 pt-8 mx-auto block scale-125" src={studioBio.studioImageURL} aria-label="photo of the interior of the yoga studio"></img>
-                            <h2 className="font-bold text-xl pt-16">Our Neighborhood</h2>
-                            <div>{studioBio.neighborhoodBio}</div>
-                            <img className="m-4 mx-auto block" src={studioBio.neighborhoodImageURL} aria-label="photo of the neighborhood"></img>
+                            <div className="bg-blue-300 rounded-md pt-6 shadow-xl">
+                                <h2 className="font-bold text-xl">Our Studio</h2>
+                                <p>{studioBio.studioBio}</p>
+                                <img className="m-8 pt-10 pb-20 mx-auto block scale-125" src={studioBio.studioImageURL} aria-label="photo of the interior of the yoga studio"></img>
+                            </div>
+                            <div className="bg-blue-300 rounded-md mt-16 shadow-xl">
+                                <h2 className="font-bold text-xl pt-8">Our Neighborhood</h2>
+                                <p>{studioBio.neighborhoodBio}</p>
+                                <img className="m-4 mx-auto block pb-8" src={studioBio.neighborhoodImageURL} aria-label="photo of the neighborhood"></img>
+                            </div>
                         </div>
                     )
                 }

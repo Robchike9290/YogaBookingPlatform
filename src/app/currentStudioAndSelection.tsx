@@ -15,7 +15,7 @@ export default function CurrentStudioAndSelection() {
                 <option>Downtown</option>
                 <option>Mueller</option>
             </select>
-            <button className="bg-blue-300 p-4 m-4 rounded-md">Book class here</button>
+            <button className="bg-blue-300 p-4 m-4 rounded-md shadow-lg">Book class here</button>
         </div>
     )
 }
