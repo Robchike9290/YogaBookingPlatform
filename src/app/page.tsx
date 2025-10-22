@@ -6,6 +6,7 @@ import CurrentStudioAndSelection from './currentStudioAndSelection'
 import PricingPlans from './pricingPlans'
 import TitleBar from '@/components/TitleBar'
 import RootLayout from './layout'
+import AboutStudio from './AboutStudio'
 
 export default function Home() {
   const [backendStatus, setBackendStatus] = useState('Checking...')
@@ -23,8 +24,11 @@ export default function Home() {
       <TitleBar />
       <br />
       <NavBar />
-      <CurrentStudioAndSelection />
-      <PricingPlans />
+      <div className="grid grid-cols-5 grid-rows-3">
+        <CurrentStudioAndSelection />
+        <PricingPlans />
+        <AboutStudio studioName={'Bouldin'} />
+      </div>
     </RootLayout>
   )
 }
