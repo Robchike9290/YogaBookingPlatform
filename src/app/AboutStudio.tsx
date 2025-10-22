@@ -13,53 +13,59 @@ interface StudioNameProps {
 const studioBios = [
     {
         name: "Crestview",
-        bio: "A chill studio in north Austin for central Austin neighborhood dwellers."
+        neighborhoodBio: "A chill studio in north Austin for central Austin neighborhood dwellers.",
+        studioImageURL: "/Crestview Studio.jpg",
+        studioBio: "A bright, light-filled studio with a clean, polished, and serene look.",
+        neighborhoodImageURL: "/Crestview.jpg"
     },
     {
         name: "Bouldin",
-        bio: "Old-school Austin nieghborhood vibes with shopping and parks nearby."
+        neighborhoodBio: "Old-school Austin nieghborhood vibes with shopping and parks nearby.",
+        studioImageURL: "/Bouldin Studio.jpg",
+        studioBio: "Beautiful views of the skyline from large windows will add energy to your flow.",
+        neighborhoodImageURL: "/Bouldin.jpeg"
     },
     {
         name: "Riata",
-        bio: "A chill studio in north Austin that satisfies those of us the like being further from the center of it all."
+        neighborhoodBio: "A chill studio in north Austin that satisfies those of us the like being further from the center of it all.",
+        studioImageURL: "/Riata Yoga Studio.jpg",
+        studioBio: "Quiet, cozy, and full of greenery, this studio will feel like a warm embrace.",
+        neighborhoodImageURL: "/Riata.jpg"
     },
     {
         name: "Downtown",
-        bio: "For those of us that love hustle and bustle with the most modern spaces."
+        neighborhoodBio: "For those of us that love hustle and bustle with the most modern spaces.",
+        studioImageURL: "/Downtown Studio.jpg",
+        studioBio: "Bright sunlight and green plants make this studio feel like an oasis in the midst of so much hustle and bustle.",
+        neighborhoodImageURL: "/Downtown.jpg"
     },
     {
         name: "Mueller",
-        bio: "Perfect if you love a little post-yoga farmer's market shopping or brunch on weekends."
+        neighborhoodBio: "Perfect if you love a little post-yoga farmer's market shopping or brunch on weekends.",
+        studioImageURL: "/Mueller Yoga Studio.jpg",
+        studioBio: "Mellow colors and tony wood floors bring a sense of calm to your flow.",
+        neighborhoodImageURL: "/Mueller.jpg"
     }
 ]
 
 export default function AboutStudio(props: AboutStudioPropTypes) {
     return (
-        <div className="col-start-3 col-span-3 row-start-1 row-span-3 p-8 m-8 border-blue-300 bg-blue-100 rounded-lg text-blue-600 border-4">
-            <h1 className="text-center font-bold text-xl">{props.studioName}</h1>
-            <img></img>
+        <div className="col-start-3 col-span-3 row-start-1 row-span-3 p-8 m-8 border-blue-300 border-4 bg-blue-100 rounded-lg text-center text-blue-600">
+            <h1 className="font-bold text-2xl">{props.studioName}</h1>
             <div>{studioBios.map((studioBio) => {
                 if (props.studioName === studioBio.name) {
                     return (
-                        <>
-                            <StudioBio bio={studioBio.bio} />
-                            <StudioName name={studioBio.name} />
-                        </>
+                        <div className="flex-auto">
+                            <h2 className="font-bold text-xl pt-8">Our Studio</h2>
+                            <div>{studioBio.studioBio}</div>
+                            <img className="m-8 pt-8 mx-auto block scale-125" src={studioBio.studioImageURL} aria-label="photo of the interior of the yoga studio"></img>
+                            <h2 className="font-bold text-xl pt-16">Our Neighborhood</h2>
+                            <div>{studioBio.neighborhoodBio}</div>
+                            <img className="m-4 mx-auto block" src={studioBio.neighborhoodImageURL} aria-label="photo of the neighborhood"></img>
+                        </div>
                     )
                 }
             })}</div>
         </div>
-    )
-}
-
-function StudioBio(props: StudioBioProps) {
-    return (
-        <div>{props.bio}</div>
-    )
-}
-
-function StudioName(props: StudioNameProps) {
-    return (
-        <div>{props.name}</div>
     )
 }
