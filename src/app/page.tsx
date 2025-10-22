@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import NavBar from './navBar'
 import CurrentStudioAndSelection from './currentStudioAndSelection'
 import PricingPlans from './pricingPlans'
+import TitleBar from '@/components/TitleBar'
+import RootLayout from './layout'
 
 export default function Home() {
   const [backendStatus, setBackendStatus] = useState('Checking...')
@@ -17,10 +19,12 @@ export default function Home() {
   }, [])
 
   return (
-    <>
+    <RootLayout>
+      <TitleBar />
+      <br />
       <NavBar />
       <CurrentStudioAndSelection />
       <PricingPlans />
-    </>
+    </RootLayout>
   )
 }
