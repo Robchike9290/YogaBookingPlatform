@@ -25,6 +25,13 @@ const dummyClassData = [
     startTime: "7:30 AM",
     date: "10/19/2025",
     length: 60
+  },
+  {
+    name: "Hatha",
+    instructor: "Alyssa",
+    startTime: "7:30 AM",
+    date: "10/23/2025",
+    length: 60
   } 
 ]
 
