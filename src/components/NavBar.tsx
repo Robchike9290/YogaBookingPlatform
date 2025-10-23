@@ -1,3 +1,5 @@
+'use client'
+
 export default function NavBar() {
     return (
         <table className="rounded-lg w-full border-blue-300 border-4">

@@ -1,12 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import NavBar from './navBar'
 import CurrentStudioAndSelection from './currentStudioAndSelection'
-import PricingPlans from './pricingPlans'
-import TitleBar from '@/components/TitleBar'
 import RootLayout from './layout'
-import AboutStudio from './AboutStudio'
+import AboutStudio from '@/components/AboutStudio'
+import PricingPlans from '@/components/PricingPlans'
 
 export default function Home() {
   const [backendStatus, setBackendStatus] = useState('Checking...')
@@ -20,10 +18,7 @@ export default function Home() {
   }, [])
 
   return (
-    <RootLayout className="bg-blue-800">
-      <TitleBar />
-      <br />
-      <NavBar />
+    <RootLayout>
       <div className="grid grid-cols-5 grid-rows-3">
         <CurrentStudioAndSelection />
         <PricingPlans />
