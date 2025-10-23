@@ -1,10 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import CurrentStudioAndSelection from './currentStudioAndSelection'
 import RootLayout from './layout'
 import AboutStudio from '@/app/_components/AboutStudio'
 import PricingPlans from '@/app/_components/PricingPlans'
+import CurrentStudioAndSelection from './_components/currentStudioAndSelection'
 
 export default function Home() {
   const [backendStatus, setBackendStatus] = useState('Checking...')

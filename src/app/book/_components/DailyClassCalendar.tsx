@@ -37,11 +37,14 @@ export default function DailyClassCalendar(props: DailyClassCalendarProps) {
             <div>{dummyClassData.map((classData) => {
                 if (props.currentDate === classData.date) {
                     return (
-                        <div className="bg-blue-300 rounded-md m-6 p-6 shadow-xl">
-                            <h3>{classData.name}</h3>
-                            <h4>Instructor: {classData.instructor}</h4>
-                            <div>Start time: {classData.startTime}</div>
-                            <div>Length: {classData.length} minutes</div>
+                        <div className="bg-blue-300 rounded-md m-6 p-6 shadow-xl grid grid-cols-6 grid-rows-1">
+                            <div className="col-start-1 col-span-5 row-start-1">
+                                <h3>{classData.name}</h3>
+                                <h4>Instructor: {classData.instructor}</h4>
+                                <div>Start time: {classData.startTime}</div>
+                                <div>Length: {classData.length} minutes</div>
+                            </div>
+                            <button className="col-start-6 row-start-1 bg-blue-100 rounded-md m-2 p-2 shadow-xl">Book</button>
                         </div>
                     )
                 }

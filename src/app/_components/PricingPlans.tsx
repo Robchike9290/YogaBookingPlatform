@@ -1,6 +1,22 @@
 import PricingPlan from './PricingPlan'
 
-const pricingPlans = ["Plan 1", "Plan 2", "Plan 3"]
+const pricingPlans = [
+    {
+        name: "Yearly prepaid membership",
+        price: "$999/year",
+        valueStatement: "Save 20% off of monthly rate!"
+    }, 
+    {
+        name: "Monthly prepaid membership",
+        price: "$100/month",
+        valueStatement: "Save 40% off of weekly rate!"
+    }, 
+    {
+        name: "Weekly prepraid membership",
+        price: "$35/week",
+        valueStatement: "Great to try us out for a week or two!"
+    }
+]
 
 export default function PricingPlans() {
     return (
