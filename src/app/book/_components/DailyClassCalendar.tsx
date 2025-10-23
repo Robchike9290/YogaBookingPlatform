@@ -30,14 +30,14 @@ const dummyClassData = [
 
 export default function DailyClassCalendar(props: DailyClassCalendarProps) {
     return (
-        <div className="col-start-4 col-span-3 row-start-1 row-span-2 border-blue-300 border-4 bg-blue-100 rounded-lg text-center text-blue-600 mx-8 px-8">
+        <div className="col-start-4 col-span-3 row-start-1 row-span-2 border-blue-300 border-4 bg-blue-100 rounded-lg text-center text-blue-600 mx-8 px-8 max-h-96 overflow-auto">
             {/* TODO: How to get a dynamic date for a month here. */}
             <h1 className="font-bold text-3xl">*Date* classes (daily)</h1>
             {/* TODO: How to map a class list here */}
             <div>{dummyClassData.map((classData) => {
                 if (props.currentDate === classData.date) {
                     return (
-                        <div>
+                        <div className="bg-blue-300 rounded-md m-6 p-6 shadow-xl">
                             <h3>{classData.name}</h3>
                             <h4>Instructor: {classData.instructor}</h4>
                             <div>Start time: {classData.startTime}</div>

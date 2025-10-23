@@ -50,7 +50,7 @@ const studioBios = [
 
 export default function AboutStudio(props: AboutStudioPropTypes) {
     return (
-        <div className="col-start-3 col-span-3 row-start-1 row-span-3 p-8 m-8 border-blue-300 border-4 bg-blue-100 rounded-lg text-center text-blue-600">
+        <div className="col-start-3 col-span-3 row-start-1 row-span-3 p-8 m-8 border-blue-300 border-4 bg-blue-100 rounded-lg text-center text-blue-600 overflow-auto max-h-16">
             <h1 className="font-bold text-3xl mb-8">{props.studioName}</h1>
             <div>{studioBios.map((studioBio) => {
                 if (props.studioName === studioBio.name) {
