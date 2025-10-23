@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react'
 import CurrentStudioAndSelection from './currentStudioAndSelection'
 import RootLayout from './layout'
-import AboutStudio from '@/components/AboutStudio'
-import PricingPlans from '@/components/PricingPlans'
+import AboutStudio from '@/app/_components/AboutStudio'
+import PricingPlans from '@/app/_components/PricingPlans'
 
 export default function Home() {
   const [backendStatus, setBackendStatus] = useState('Checking...')

@@ -1,4 +1,4 @@
-import PricingPlan from './pricingPlan'
+import PricingPlan from './PricingPlan'
 
 const pricingPlans = ["Plan 1", "Plan 2", "Plan 3"]
 
