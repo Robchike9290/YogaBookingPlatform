@@ -3,7 +3,7 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/_components/AuthContext'
 
-// TODO: Move this to the back end.  Make pricing plans populate at load on front end, have them randomly update on backend and on a button click, see the new deals.
+// TODO: Move this to the back end.  Make pricing plans populate at load on front end based upon location, have them randomly update on backend and on a button click, see the new deals.
 const pricingPlans = ["Plan 1", "Plan 2", "Plan 3"]
 
 export default function CurrentStudioAndSelection() {
@@ -12,11 +12,8 @@ export default function CurrentStudioAndSelection() {
 
     const handleClick = () => {
         if (isLoggedIn) {
-            // TODO: Implement function to go to booking page for this studio
-            console.log('Logged in, going to studio booking page!')
+            router.push('/book')
         } else if (!isLoggedIn) {
-            // TODO: Redirect to login page if not logged in.
-            console.log('Redirecting to login page')
             router.push('/login')
         }
     }
