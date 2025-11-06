@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import RootLayout from './layout'
 import AboutStudio from '@/app/_components/AboutStudio'
 import PricingPlans from '@/app/_components/PricingPlans'
-import CurrentStudioAndSelection from './_components/currentStudioAndSelection'
+import CurrentStudioAndSelection from '@/app/_components/CurrentStudioAndSelection'
 
 export default function Home() {
   const [backendStatus, setBackendStatus] = useState('Checking...')
@@ -18,12 +18,10 @@ export default function Home() {
   }, [])
 
   return (
-    <RootLayout>
-      <div className="grid grid-cols-5 grid-rows-3">
-        <CurrentStudioAndSelection />
-        <PricingPlans />
-        <AboutStudio studioName={'Bouldin'} />
-      </div>
-    </RootLayout>
+    <div className="grid grid-cols-5 grid-rows-3">
+      <CurrentStudioAndSelection />
+      <PricingPlans />
+      <AboutStudio studioName={'Bouldin'} />
+    </div>
   )
 }
