@@ -20,7 +20,7 @@ export default function Book() {
 
     return (
         <div className="grid grid-cols-6 grid-rows-2">
-            <MonthlyClassCalendar />
+            <MonthlyClassCalendar setCurrentDate={setCurrentDate} />
             <DailyClassCalendar currentDate={currentDate} />
         </div>
     )
