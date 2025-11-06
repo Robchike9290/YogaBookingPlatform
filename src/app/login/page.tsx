@@ -1,3 +1,5 @@
+'use client'
+
 export default function Login() {
     return (
         // TODO: Make styles be generic, this is insanely out of hand.
@@ -20,10 +22,13 @@ function LoginForm() {
                     <label className="text-blue-700 text-center" htmlFor="Username">Password </label>
                     <input type="text" />
                 </div>
-                <div className="relative">
-                    <button className="absolute top-0 right-0 text-blue-600 font-bold hover:text-purple-700 rounded-md p-2 mt-2 bg-blue-300">Login</button>
+                <div className="flex justify-end">
+                <button className="text-blue-600 font-bold hover:text-purple-700 rounded-md p-2 mt-2 bg-blue-300">Login</button>
                 </div>
             </form>
+            <div>
+                <h3 className="flex justify-end gap-2 text-blue-600">Not a member?<a className="text-purple-700">Sign up here.</a></h3>
+            </div>
         </>
     )
 }
