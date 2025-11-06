@@ -1,11 +1,14 @@
+import React from 'react'
+import { v4 } from 'uuid'
+
 interface DailyClassCalendarProps {
-    // TODO: Update to proper date type
     currentDate: string
 }
 
 // TODO: Move this to a "real" database
 const dummyClassData = [
   {
+    id: v4(),
     name: "Vinyasa II",
     instructor: "Jaden",
     startTime: "1:00 PM",
@@ -13,6 +16,7 @@ const dummyClassData = [
     length: 75
   },
   {
+    id: v4(),
     name: "Candlelight Yin",
     instructor: "Darren",
     startTime: "8:00 PM",
@@ -20,6 +24,7 @@ const dummyClassData = [
     length: 60
   },
   {
+    id: v4(),
     name: "Slow Vinyasa",
     instructor: "Alyssa",
     startTime: "7:30 AM",
@@ -27,6 +32,7 @@ const dummyClassData = [
     length: 60
   },
   {
+    id: v4(),
     name: "Hatha",
     instructor: "Alyssa",
     startTime: "7:30 AM",
@@ -35,22 +41,23 @@ const dummyClassData = [
   } 
 ]
 
+// TODO: Make this page unreachable if not logged in, redirect in this case.
 export default function DailyClassCalendar(props: DailyClassCalendarProps) {
     return (
         <div className="col-start-4 col-span-3 row-start-1 row-span-2 border-blue-300 border-4 bg-blue-100 rounded-lg text-center text-blue-600 mx-8 px-8 max-h-96 overflow-auto">
-            {/* TODO: How to get a dynamic date for a month here. */}
-            <h1 className="font-bold text-3xl">*Date* classes (daily)</h1>
+            <h1 className="font-bold text-3xl">Classes Available for {props.currentDate}:</h1>
             {/* TODO: Add in a key to the map */}
             <div>{dummyClassData.map((classData) => {
                 if (props.currentDate === classData.date) {
                     return (
-                        <div className="bg-blue-300 rounded-md m-6 p-6 shadow-xl grid grid-cols-6 grid-rows-1">
+                        <div key={classData.id} className="bg-blue-300 rounded-md m-6 p-6 shadow-xl grid grid-cols-6 grid-rows-1">
                             <div className="col-start-1 col-span-5 row-start-1">
                                 <h3>{classData.name}</h3>
                                 <h4>Instructor: {classData.instructor}</h4>
                                 <div>Start time: {classData.startTime}</div>
                                 <div>Length: {classData.length} minutes</div>
                             </div>
+                            {/* TODO: Add functionality to add class to profile */}
                             <button className="col-start-6 row-start-1 bg-blue-100 rounded-md m-2 p-2 shadow-xl">Book</button>
                         </div>
                     )
