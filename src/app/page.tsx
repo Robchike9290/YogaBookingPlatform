@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import RootLayout from './layout'
 import AboutStudio from '@/app/_components/AboutStudio'
 import PricingPlans from '@/app/_components/PricingPlans'
 import CurrentStudioAndSelection from '@/app/_components/CurrentStudioAndSelection'

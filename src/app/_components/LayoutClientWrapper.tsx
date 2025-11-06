@@ -1,23 +1,21 @@
 'use client'
 
-import { useState } from 'react'
 import NavBar from '@/app/_components/NavBar'
 import TitleBar from '@/app/_components/TitleBar'
+import { AuthProvider } from '@/_components/AuthContext'
 
 export default function LayoutClientWrapper({ 
     children 
 }: { 
     children: React.ReactNode 
 }) {
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
-
     return (
-        <>
+        <AuthProvider>
             <TitleBar />
             <br />
-            <NavBar isLoggedIn={isLoggedIn} />
+            <NavBar />
             <br />
             <main>{children}</main>
-        </>
+        </AuthProvider>
     )
 }
