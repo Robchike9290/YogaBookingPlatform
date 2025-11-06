@@ -12,6 +12,7 @@ interface StudioNameProps {
     name: string
 }
 
+// TODO: Move to DB.
 const studioBios = [
     {
         name: "Crestview",
