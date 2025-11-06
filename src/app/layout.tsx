@@ -1,9 +1,6 @@
-'use client'
-
 import { Inter } from 'next/font/google'
 import '../styles/globals.css'
-import TitleBar from '@/app/_components/TitleBar'
-import NavBar from '@/app/_components/NavBar'
+import LayoutClientWrapper from '@/app/_components/LayoutClientWrapper'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,11 +17,7 @@ export default function RootLayout({
         <title>Yoga Booking Platform</title>
       </head>
       <body className={inter.className}>
-        <TitleBar />
-        <br />
-        <NavBar />
-        <br />
-        <main>{children}</main>
+        <LayoutClientWrapper>{children}</LayoutClientWrapper>
       </body>
     </html>
   )

@@ -1,19 +1,23 @@
 'use client'
 import React, { useState } from 'react'
+import Link from 'next/link'
 
-export default function Login() {
+interface LoginProps {
+    isLoggedIn: boolean
+}
+
+export default function Login({ isLoggedIn }: LoginProps) {
     return (
         // TODO: Make styles be generic, this is insanely out of hand.
         <div className="bg-blue-100 justify-self-center border-4 border-blue-300 rounded-lg p-6">
-            <LoginForm />
+            <LoginForm isLoggedIn={isLoggedIn}/>
         </div>
     )
 }
 
-function LoginForm() {
+function LoginForm({ isLoggedIn }: LoginProps) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(event.target.value)
@@ -21,10 +25,6 @@ function LoginForm() {
 
     const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setUsername(event.target.value)
-    }
-
-    const handleSignup = () => {
-        // navigate to signup page
     }
 
     const handleSubmit = () => {
@@ -78,9 +78,9 @@ function LoginForm() {
                     <div>
                         <h3 className="flex justify-end gap-2 text-blue-600">
                             Not a member?
-                            <a className="text-purple-700 hover:text-black" onClick={handleSignup}>
+                            <Link className="text-purple-700 hover:text-black" href="/signup">
                                 Sign up here.
-                            </a>
+                            </Link>
                         </h3>
                     </div>
                 </>
