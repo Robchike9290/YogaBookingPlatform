@@ -42,11 +42,11 @@ const dummyClassData = [
 ]
 
 // TODO: Make this page unreachable if not logged in, redirect in this case.
+// TODO: Update render behavior to not flash an out-of-format date on initial load.
 export default function DailyClassCalendar(props: DailyClassCalendarProps) {
     return (
         <div className="col-start-4 col-span-3 row-start-1 row-span-2 border-blue-300 border-4 bg-blue-100 rounded-lg text-center text-blue-600 mx-8 px-8 max-h-96 overflow-auto">
             <h1 className="font-bold text-3xl">Classes Available for {props.currentDate}:</h1>
-            {/* TODO: Add in a key to the map */}
             <div>{dummyClassData.map((classData) => {
                 if (props.currentDate === classData.date) {
                     return (

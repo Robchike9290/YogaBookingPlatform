@@ -1,21 +1,40 @@
 'use client'
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/_components/AuthContext'
+
+type Studio = {
+    id: string,
+    name: string
+}
+
+interface CurrentStudioAndSelectionProps {
+    allStudios: Studio[],
+    setCurrentStudioName: Function
+}
 
 // TODO: Move this to the back end.  Make pricing plans populate at load on front end based upon location, have them randomly update on backend and on a button click, see the new deals.
 const pricingPlans = ["Plan 1", "Plan 2", "Plan 3"]
 
-export default function CurrentStudioAndSelection() {
+export default function CurrentStudioAndSelection({ 
+    allStudios,
+    setCurrentStudioName
+}: CurrentStudioAndSelectionProps
+) {
     const router = useRouter()
     const { isLoggedIn } = useAuth()
 
-    const handleClick = () => {
+    const handleClickBookingButton = () => {
         if (isLoggedIn) {
             router.push('/book')
         } else if (!isLoggedIn) {
             router.push('/login')
         }
+    }
+
+    const handleChangeStudioName = (event: any) => {
+        const studioName = event.target.value
+        setCurrentStudioName(studioName)
     }
 
     return (
@@ -25,15 +44,13 @@ export default function CurrentStudioAndSelection() {
             <br />
             <p>Click the button to book if you like what you see!</p>
             <div className="grid grid-columns-2 grid-rows-1">
-                <select className="m-8 col-start-1 row-start-1">
+                <select className="m-8 col-start-1 row-start-1" onChange={() => handleChangeStudioName(event)}>
                     <option value="">Select a studio location</option>
-                    <option>Crestview</option>
-                    <option>Bouldin</option>
-                    <option>Riata</option>
-                    <option>Downtown</option>
-                    <option>Mueller</option>
+                    {allStudios.map((studio) => {
+                        return <option key={studio.id}>{studio.name}</option>
+                    })}
                 </select>
-                <button className="bg-blue-300 p-4 m-4 rounded-md shadow-lg col-start-2 row-start-1" onClick={handleClick}>Book class at this location</button>
+                <button className="bg-blue-300 p-4 m-4 rounded-md shadow-lg col-start-2 row-start-1" onClick={handleClickBookingButton}>Book class at this location</button>
             </div>
         </div>
     )
