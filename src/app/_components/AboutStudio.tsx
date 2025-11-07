@@ -54,6 +54,7 @@ const studioBios: StudioBioProps[] = [
         neighborhoodBio: "Perfect if you love a little post-yoga farmer's market shopping or brunch on weekends.",
         studioImageURL: "/Mueller Yoga Studio.jpg",
         studioBio: "Mellow colors and tony wood floors bring a sense of calm to your flow.",
+        // TODO: Fix up image dimensions to grow/shrink with containing element (typ)
         neighborhoodImageURL: "/Mueller.jpg"
     }
 ]
