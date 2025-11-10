@@ -46,7 +46,8 @@ export default function ProfileMetadata() {
     const targetObject = dummyData[0]
 
     return (
-        <div className="col-start-2 border-4 rounded-lg border-blue-300 m-4">
+        <div className="col-start-2 col-end-3 rounded-lg bg-blue-300 m-4 p-4 text-blue-600 shadow-lg">
+            <h1 className="text-xl font-bold">User Info</h1>
             <ul>
                 {Object.keys(targetObject).map((key) => {
                     return <li key={key}>{formatString(key)}: {targetObject[key as keyof typeof targetObject]}</li>
