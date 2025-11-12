@@ -81,10 +81,12 @@ export interface Deal {
   restrictions?: Restriction[];
 }
 
-// Interfaces - Auth
-export interface AuthContextType {
+// Interfaces - Context
+export interface PlatformContextType {
   isLoggedIn: boolean;
   setIsLoggedIn: (value: boolean) => void;
+  currentDate: string;
+  setCurrentDate: (value: string) => void;
 }
 
 export interface LoginProps {
@@ -101,10 +103,8 @@ export interface UserInfoFormProps {
 }
 
 // Interfaces - Calendar
-export interface MonthlyClassCalendarProps {
-  setCurrentDate: Function;
-}
-
-export interface DailyClassCalendarProps {
-  currentDate: string;
+export interface CalendarProps {
+  setCurrentDate?: (value: string) => void;
+  currentDate?: string;
+  title: string;
 }

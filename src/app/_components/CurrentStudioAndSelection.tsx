@@ -1,7 +1,7 @@
 "use client";
 import React, { ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/_components/AuthContext";
+import { usePlatformContext } from "@/_components/PlatformContext";
 import { CurrentStudioAndSelectionProps } from "@/types";
 
 // TODO: Move this to the back end.  Make pricing plans populate at load on front end based upon location, have them randomly update on backend and on a button click, see the new deals.
@@ -12,7 +12,7 @@ export default function CurrentStudioAndSelection({
   setCurrentStudioName,
 }: CurrentStudioAndSelectionProps) {
   const router = useRouter();
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = usePlatformContext();
 
   const handleClickBookingButton = () => {
     if (isLoggedIn) {

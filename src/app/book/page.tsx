@@ -2,7 +2,7 @@
 // TODO: Use <Suspense /> component to optimize this and other
 // client-side-rendered pages to render everything EXCEPT dynamic content.
 
-import MonthlyClassCalendar from "./_components/MonthlyClassCalendar";
+import MonthlyClassCalendar from "../../_components/MonthlyClassCalendar";
 import DailyClassCalendar from "./_components/DailyClassCalendar";
 import { useState, useEffect } from "react";
 
@@ -20,8 +20,14 @@ export default function Book() {
 
   return (
     <div className="grid grid-cols-6 grid-rows-2">
-      <MonthlyClassCalendar setCurrentDate={setCurrentDate} />
-      <DailyClassCalendar currentDate={currentDate} />
+      <MonthlyClassCalendar
+        setCurrentDate={setCurrentDate}
+        title={"Class Schedule Date Picker"}
+      />
+      <DailyClassCalendar
+        currentDate={currentDate}
+        title={"Classes Available for "}
+      />
     </div>
   );
 }

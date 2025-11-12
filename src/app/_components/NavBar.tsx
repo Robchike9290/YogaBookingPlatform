@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { useAuth } from "@/_components/AuthContext";
+import { usePlatformContext } from "@/_components/PlatformContext";
 
 export default function NavBar() {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = usePlatformContext();
 
   return (
     <nav className="flex w-full rounded-lg border-4 border-blue-300 bg-blue-100 p-2">

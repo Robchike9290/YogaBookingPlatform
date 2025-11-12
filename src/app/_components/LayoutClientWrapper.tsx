@@ -2,7 +2,7 @@
 
 import NavBar from "@/app/_components/NavBar";
 import TitleBar from "@/app/_components/TitleBar";
-import { AuthProvider } from "@/_components/AuthContext";
+import { PlatformContextProvider } from "@/_components/PlatformContext";
 
 export default function LayoutClientWrapper({
   children,
@@ -10,12 +10,12 @@ export default function LayoutClientWrapper({
   children: React.ReactNode;
 }) {
   return (
-    <AuthProvider>
+    <PlatformContextProvider>
       <TitleBar />
       <br />
       <NavBar />
       <br />
       <main>{children}</main>
-    </AuthProvider>
+    </PlatformContextProvider>
   );
 }

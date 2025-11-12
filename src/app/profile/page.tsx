@@ -8,7 +8,8 @@ export default function Profile() {
     <div className="grid grid-cols-5 grid-rows-2 text-blue-600">
       <ProfileMetadata />
       <Deals />
-      <BookingCalendar />
+      {/* TODO: Pass the name of the user and studio to the booking calendar as a prop */}
+      <BookingCalendar title="Booking Calendar" />
     </div>
   );
 }
