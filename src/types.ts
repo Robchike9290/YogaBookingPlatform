@@ -106,5 +106,5 @@ export interface UserInfoFormProps {
 export interface CalendarProps {
   setCurrentDate?: (value: string) => void;
   currentDate?: string;
-  title: string;
+  title?: string;
 }

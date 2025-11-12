@@ -3,17 +3,16 @@
 // client-side-rendered pages to render everything EXCEPT dynamic content.
 
 import MonthlyClassCalendar from "../../_components/MonthlyClassCalendar";
-import DailyClassCalendar from "./_components/DailyClassCalendar";
+import DailyClassCalendar from "../../_components/DailyClassCalendar";
 import { useState, useEffect } from "react";
+import { getDateParts } from "@/utils";
 
 export default function Book() {
   const [currentDate, setCurrentDate] = useState(Date());
 
   useEffect(() => {
     const today = new Date();
-    const month = (today.getMonth() + 1).toString().padStart(2, "0");
-    const day = today.getDate().toString().padStart(2, "0");
-    const year = today.getFullYear();
+    const [month, day, year] = getDateParts(today);
 
     setCurrentDate(`${month}/${day}/${year}`);
   }, []);
@@ -25,6 +24,7 @@ export default function Book() {
         title={"Class Schedule Date Picker"}
       />
       <DailyClassCalendar
+        // TODO: remove unnecessary prop values that can be drawn out of the context.
         currentDate={currentDate}
         title={"Classes Available for "}
       />

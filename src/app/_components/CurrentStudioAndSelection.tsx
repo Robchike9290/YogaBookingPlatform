@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEvent } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 import { usePlatformContext } from "@/_components/PlatformContext";
 import { CurrentStudioAndSelectionProps } from "@/types";
