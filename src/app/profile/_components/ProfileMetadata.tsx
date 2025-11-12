@@ -48,7 +48,7 @@ export default function ProfileMetadata() {
   const targetObject = dummyData[0];
 
   return (
-    <div className="col-span-2 col-start-1 row-span-1 row-start-1 grid grid-cols-2 bg-blue-100">
+    <div className="col-span-2 col-start-1 row-span-1 row-start-1 m-4 grid grid-cols-2 rounded-lg border-4 border-blue-300 bg-blue-100">
       <img
         className="col-span-1 col-start-1 bg-blue-100"
         src={"/DelcineMajeed.jpg"}

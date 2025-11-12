@@ -11,7 +11,7 @@ export default function StudioBio({ studioBio }: StudioBioComponentProps) {
         <h2 className="text-xl font-bold">Our Studio</h2>
         <p>{studioBio.studioBio}</p>
         <img
-          className="m-8 block scale-125 pb-20 pt-10"
+          className="m-4 mx-auto block h-auto w-11/12 max-w-full object-contain pb-8"
           src={studioBio.studioImageURL}
           aria-label="photo of the interior of the yoga studio"
         ></img>
@@ -20,7 +20,7 @@ export default function StudioBio({ studioBio }: StudioBioComponentProps) {
         <h2 className="pt-8 text-xl font-bold">Our Neighborhood</h2>
         <p>{studioBio.neighborhoodBio}</p>
         <img
-          className="m-4 block pb-8"
+          className="m-4 mx-auto block h-auto w-11/12 max-w-full object-contain pb-8"
           src={studioBio.neighborhoodImageURL}
           aria-label="photo of the neighborhood"
         ></img>
