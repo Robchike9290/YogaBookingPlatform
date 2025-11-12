@@ -1,28 +1,56 @@
-'use client'
-import Link from 'next/link'
-import React from 'react'
-import { useAuth } from '@/_components/AuthContext'
+"use client";
+import Link from "next/link";
+import React from "react";
+import { useAuth } from "@/_components/AuthContext";
 
 export default function NavBar() {
-    const { isLoggedIn } = useAuth()
-    
-    return (
-        <nav className="flex w-full rounded-lg w-full border-blue-300 border-4 p-2 bg-blue-100">
-            {
-                isLoggedIn ? (
-                    <>
-                        <Link className="flex-1 text-blue-600 font-bold m-1 w-1/4 hover:text-purple-700 text-center text-2xl" href="/">Landing Page</Link>
-                        <Link className="flex-1 text-blue-600 font-bold m-1 w-1/4 hover:text-purple-700 text-center text-2xl" href="/book">Booking Page</Link>
-                        <Link className="flex-1 text-blue-600 font-bold m-1 w-1/4 hover:text-purple-700 text-center text-2xl" href="/profile">Profile</Link>
-                        <Link className="flex-1 text-blue-600 font-bold m-1 w-1/4 hover:text-purple-700 text-center text-2xl" href="/login">Logout</Link>
-                    </>
-                ) : (
-                    <>
-                        <Link className="flex-1 text-blue-600 font-bold m-1 w-1/4 hover:text-purple-700 text-center text-2xl" href="/">Landing Page</Link>
-                        <Link className="flex-1 text-blue-600 font-bold m-1 w-1/4 hover:text-purple-700 text-center text-2xl" href="/login">Login</Link>
-                    </>
-                )
-            }
-        </nav>
-    )
+  const { isLoggedIn } = useAuth();
+
+  return (
+    <nav className="flex w-full rounded-lg border-4 border-blue-300 bg-blue-100 p-2">
+      {isLoggedIn ? (
+        <>
+          <Link
+            className="m-1 w-1/4 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
+            href="/"
+          >
+            Landing Page
+          </Link>
+          <Link
+            className="m-1 w-1/4 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
+            href="/book"
+          >
+            Booking Page
+          </Link>
+          <Link
+            className="m-1 w-1/4 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
+            href="/profile"
+          >
+            Profile
+          </Link>
+          <Link
+            className="m-1 w-1/4 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
+            href="/login"
+          >
+            Logout
+          </Link>
+        </>
+      ) : (
+        <>
+          <Link
+            className="m-1 w-1/4 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
+            href="/"
+          >
+            Landing Page
+          </Link>
+          <Link
+            className="m-1 w-1/4 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
+            href="/login"
+          >
+            Login
+          </Link>
+        </>
+      )}
+    </nav>
+  );
 }

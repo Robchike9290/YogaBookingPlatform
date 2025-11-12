@@ -1,0 +1,13 @@
+{
+  "extends": ["plugin:tailwindcss/recommended"],
+  "plugins": ["tailwindscss"],
+  "rules": {
+    "tailwindcss/classnames-order": "on"
+  },
+  "typescript": {
+    "extends": ["plugin:tailwindcss/recommended"],
+    "rules": {
+      "tailwindcss/classnames-order": "on"
+    }
+  }
+}

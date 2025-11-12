@@ -5,6 +5,7 @@ A modern full-stack yoga booking platform built with Next.js, React, TypeScript,
 ## Tech Stack
 
 ### Frontend
+
 - **Next.js 14** - React framework with App Router
 - **React 18** - UI library
 - **TypeScript** - Type safety
@@ -13,6 +14,7 @@ A modern full-stack yoga booking platform built with Next.js, React, TypeScript,
 - **Jest** - Testing framework
 
 ### Backend
+
 - **Java 17** - Programming language
 - **Spring Boot 3.2** - Framework
 - **Spring Security** - Security
@@ -22,6 +24,7 @@ A modern full-stack yoga booking platform built with Next.js, React, TypeScript,
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ and npm
 - Java 17+
 - Maven 3.6+
@@ -29,11 +32,13 @@ A modern full-stack yoga booking platform built with Next.js, React, TypeScript,
 ### Frontend Setup
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -43,6 +48,7 @@ npm run dev
 ### Backend Setup
 
 1. Run the Spring Boot application:
+
 ```bash
 mvn spring-boot:run
 ```
@@ -59,11 +65,13 @@ mvn spring-boot:run
 ### Testing
 
 Run frontend tests:
+
 ```bash
 npm test
 ```
 
 Run backend tests:
+
 ```bash
 mvn test
 ```
@@ -94,4 +102,4 @@ mvn test
 - ✅ CORS configuration
 - ✅ Health check endpoints
 - ✅ In-memory H2 database
-A yoga booking platform with a React/TS frontend and Java backend based around NextJS.
+  A yoga booking platform with a React/TS frontend and Java backend based around NextJS.
