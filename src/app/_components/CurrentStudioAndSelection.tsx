@@ -2,16 +2,7 @@
 import React, { ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/_components/AuthContext";
-
-type Studio = {
-  id: string;
-  name: string;
-};
-
-interface CurrentStudioAndSelectionProps {
-  allStudios: Studio[];
-  setCurrentStudioName: Function;
-}
+import { CurrentStudioAndSelectionProps } from "@/types";
 
 // TODO: Move this to the back end.  Make pricing plans populate at load on front end based upon location, have them randomly update on backend and on a button click, see the new deals.
 const pricingPlans = ["Plan 1", "Plan 2", "Plan 3"];

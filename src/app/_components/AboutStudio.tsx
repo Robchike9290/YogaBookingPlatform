@@ -1,20 +1,7 @@
 import React from "react";
 import { v4 } from "uuid";
 import StudioBio from "./StudioBio";
-
-interface AboutStudioPropTypes {
-  currentStudioName: string;
-}
-
-// TODO: Move types to master file.
-export interface StudioBioProps {
-  id: string;
-  name: string;
-  neighborhoodBio: string;
-  studioImageURL: string;
-  studioBio: string;
-  neighborhoodImageURL: string;
-}
+import { AboutStudioPropTypes, StudioBioProps } from "@/types";
 
 // TODO: Move to DB.
 const studioBios: StudioBioProps[] = [

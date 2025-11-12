@@ -1,9 +1,6 @@
 import React from "react";
 import { v4 } from "uuid";
-
-interface DailyClassCalendarProps {
-  currentDate: string;
-}
+import { DailyClassCalendarProps } from "@/types";
 
 // TODO: Move this to a "real" database
 const dummyClassData = [

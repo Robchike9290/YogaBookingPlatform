@@ -1,6 +1,6 @@
 import React from "react";
 import { v4 } from "uuid";
-import { StudioLocation, FitnessRank, ProfileData } from "../types";
+import { StudioLocation, FitnessRank, ProfileData } from "@/types";
 
 // TODO: Make this REAL data randoly populated and pulled from the back end.
 const dummyData: ProfileData[] = [

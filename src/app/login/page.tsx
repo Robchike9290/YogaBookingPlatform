@@ -2,10 +2,7 @@
 import React, { useState } from "react";
 import UserInfoForm from "@/_components/UserInfoForm";
 import SignupCTA from "./_components/signupCta";
-
-interface LoginProps {
-  isLoggedIn: boolean;
-}
+import { LoginProps } from "@/types";
 
 export default function Login({ isLoggedIn }: LoginProps) {
   const [username, setUsername] = useState("");

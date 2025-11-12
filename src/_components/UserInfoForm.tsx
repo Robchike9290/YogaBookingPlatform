@@ -1,14 +1,7 @@
 "use client";
 
 import React from "react";
-
-interface UserInfoFormProps {
-  formTitle: string;
-  handleUsernameChange: React.ChangeEventHandler<HTMLInputElement>;
-  handlePasswordChange: React.ChangeEventHandler<HTMLInputElement>;
-  handleSubmit: React.MouseEventHandler<HTMLButtonElement>;
-  formCta: string;
-}
+import { UserInfoFormProps } from "@/types";
 
 export default function UserInfoForm({
   handleUsernameChange,

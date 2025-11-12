@@ -1,10 +1,4 @@
-interface PricingPlanPropTypes {
-  pricingPlan: {
-    name: string;
-    price: string;
-    valueStatement: string;
-  };
-}
+import { PricingPlanPropTypes } from "@/types";
 
 export default function PricingPlan(props: PricingPlanPropTypes) {
   return (

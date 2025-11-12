@@ -1,9 +1,6 @@
 import Calendar from "react-calendar";
 import React from "react";
-
-interface MonthlyClassCalendarProps {
-  setCurrentDate: Function;
-}
+import { MonthlyClassCalendarProps } from "@/types";
 
 export default function MonthlyClassCalendar({
   setCurrentDate,

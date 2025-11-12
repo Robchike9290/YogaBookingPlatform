@@ -1,8 +1,4 @@
-import { StudioBioProps } from "./AboutStudio";
-
-interface StudioBioComponentProps {
-  studioBio: StudioBioProps;
-}
+import { StudioBioComponentProps } from "@/types";
 
 export default function StudioBio({ studioBio }: StudioBioComponentProps) {
   return (
