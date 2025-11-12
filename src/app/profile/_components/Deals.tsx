@@ -20,7 +20,7 @@ const dummyDeals: Deal[] = [
     restrictions: [
       {
         id: v4(),
-        name: "Only eligible to be used by a student taking their first class at any location",
+        name: "Only eligible to be used by a student taking their first class at any location.",
       },
     ],
   },
@@ -33,6 +33,10 @@ const dummyDeals: Deal[] = [
         id: v4(),
         name: "Only for use by students that have not yet had any kind of membership.",
       },
+      {
+        id: v4(),
+        name: "Cannot be applied on top of any existing membership discount.",
+      },
     ],
   },
   {
@@ -43,6 +47,10 @@ const dummyDeals: Deal[] = [
       {
         id: v4(),
         name: "Only for use by students that have not yet had any kind of membership.",
+      },
+      {
+        id: v4(),
+        name: "Cannot be applied on top of any existing membership discount.",
       },
     ],
   },
@@ -59,25 +67,34 @@ export default function Deals() {
       <div>
         {dummyDeals.map((deal) => {
           return (
-            <div key={deal.id} className="m-4 bg-blue-300 p-4 shadow-lg">
+            <div
+              key={deal.id}
+              className="m-4 rounded-lg bg-blue-300 p-4 shadow-lg"
+            >
               <div className="text-xl font-bold text-blue-600">{deal.name}</div>
               {deal.expirationDate ? (
-                <div className="text-md font-bold">
+                <div className="font-bold">
                   Expiration Date: {deal.expirationDate.toLocaleDateString()}
                 </div>
-              ) : null}
+              ) : (
+                <div className="font-bold">No Expiration Date</div>
+              )}
               {deal.restrictions && deal.restrictions.length > 0 ? (
-                <div className="text-md bg-blue-500 p-4 font-bold text-black">
+                <div className="rounded-md bg-blue-500 p-4 font-bold text-black shadow-lg">
                   <div>*Restrictions:</div>
-                  {deal.restrictions.map((restriction: Restriction) => {
-                    return (
-                      <div key={restriction.id}>
-                        <div>{restriction.name}</div>
-                      </div>
-                    );
-                  })}
+                  <ul className="list-disc pl-6">
+                    {deal.restrictions.map((restriction: Restriction) => {
+                      return (
+                        <li key={restriction.id}>
+                          <span>{restriction.name}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
-              ) : null}
+              ) : (
+                <div className="font-bold">No Restrictions</div>
+              )}
             </div>
           );
         })}
