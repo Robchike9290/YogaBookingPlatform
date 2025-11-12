@@ -18,6 +18,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <LayoutClientWrapper>{children}</LayoutClientWrapper>
+        {/* TODO: Add some kind of "Contact Us" page at the bottom here. */}
       </body>
     </html>
   );

@@ -25,6 +25,11 @@ export type Studio = {
   name: string;
 };
 
+export type Restriction = {
+  id: string;
+  name: string;
+};
+
 // Interfaces - Profile
 export interface ProfileData {
   id: string;
@@ -67,6 +72,13 @@ export interface PricingPlanPropTypes {
     price: string;
     valueStatement: string;
   };
+}
+
+export interface Deal {
+  id: string;
+  name: string;
+  expirationDate?: Date;
+  restrictions?: Restriction[];
 }
 
 // Interfaces - Auth
