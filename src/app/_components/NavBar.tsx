@@ -11,25 +11,25 @@ export default function NavBar() {
       {isLoggedIn ? (
         <>
           <Link
-            className="m-1 w-1/4 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
+            className="m-1 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
             href="/"
           >
             Landing Page
           </Link>
           <Link
-            className="m-1 w-1/4 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
+            className="m-1 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
             href="/book"
           >
             Booking Page
           </Link>
           <Link
-            className="m-1 w-1/4 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
+            className="m-1 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
             href="/profile"
           >
             Profile
           </Link>
           <Link
-            className="m-1 w-1/4 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
+            className="m-1 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
             href="/login"
           >
             Logout

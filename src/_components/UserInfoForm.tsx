@@ -19,7 +19,7 @@ export default function UserInfoForm({
 }: UserInfoFormProps) {
   return (
     <>
-      <h1 className="mt-2 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700">
+      <h1 className="mt-2 text-center text-2xl font-bold text-blue-600 hover:text-purple-700">
         {formTitle}
       </h1>
       <form className="justify-self-center py-4 pb-8">
