@@ -45,7 +45,7 @@ export default function CurrentStudioAndSelection({
       </p>
       <br />
       <p>Click the button to book if you like what you see!</p>
-      <div className="grid-cols-2 grid">
+      <div className="grid grid-cols-2">
         <select
           className="col-start-1 row-start-1 m-8"
           onChange={() => handleChangeStudioName(event)}

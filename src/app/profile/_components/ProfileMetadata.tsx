@@ -48,9 +48,12 @@ export default function ProfileMetadata() {
   const targetObject = dummyData[0];
 
   return (
-    <div className="row-start-1 row-span-1 col-start-1 col-span-2 bg-blue-100 grid grid-cols-2">
-      <img className="col-start-1 col-span-1 bg-blue-100" src={"/DelcineMajeed.jpg"} />
-      <div className="col-start-2 col-span-1 bg-blue-300 rounded-lg p-4 m-4 text-blue-600 shadow-lg">
+    <div className="col-span-2 col-start-1 row-span-1 row-start-1 grid grid-cols-2 bg-blue-100">
+      <img
+        className="col-span-1 col-start-1 bg-blue-100"
+        src={"/DelcineMajeed.jpg"}
+      />
+      <div className="col-span-1 col-start-2 m-4 rounded-lg bg-blue-300 p-4 text-blue-600 shadow-lg">
         <h1 className="text-xl font-bold">User Info</h1>
         <ul>
           {Object.keys(targetObject).map((key) => {
