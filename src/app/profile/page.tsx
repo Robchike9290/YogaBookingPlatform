@@ -1,10 +1,14 @@
 import React from "react";
-import ProfileInfo from "./_components/ProfileInfo";
+import ProfileMetadata from "./_components/ProfileMetadata";
+import Deals from "./_components/Deals";
+import BookingCalendar from "./_components/BookingCalendar";
 
 export default function Profile() {
   return (
-    <div className="col-span-1 col-start-2 border-4 border-blue-300 text-blue-600">
-      <ProfileInfo />
+    <div className="grid-rows-2 grid-cols-5 grid border-4 border-blue-300 text-blue-600">
+      <ProfileMetadata />
+      <Deals />
+      <BookingCalendar />
     </div>
   );
 }

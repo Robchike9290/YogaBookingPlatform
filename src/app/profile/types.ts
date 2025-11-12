@@ -1,3 +1,4 @@
+// TODO: Move this file to a master location and put all types in it.
 export enum StudioLocation {
   Crestview = "Crestview",
   Bouldin = "Bouldin",
