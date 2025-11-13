@@ -17,7 +17,7 @@ export default function Profile() {
       <div className="m-4">
         {/* TODO: Pass the name of the user and studio to the booking calendar as a prop or via context */}
         <BookingCalendar
-          dailyTitle={"My Booked Classes for: "}
+          dailyTitle={"My Booked Classes for "}
           monthlyTitle={"Booked Class Schedule Date Picker"}
         />
       </div>

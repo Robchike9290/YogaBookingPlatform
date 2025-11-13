@@ -15,14 +15,16 @@ export default function MonthlyClassCalendar({
   };
 
   return (
-    <div className="mx-8 rounded-lg bg-blue-100 px-8 text-center text-blue-600">
+    <div className="mx-8 my-4 rounded-lg bg-blue-300 text-center text-blue-600">
       {/* TODO: Style calendar to show dots on days with classes. */}
       <h1 className="text-3xl font-bold">{title}</h1>
-      <h2>
+      <h2 className="font-bold">
         Pick a date from the calendar to see the classes scheduled for any given
         day.
       </h2>
-      <Calendar onClickDay={handleClickDay} />
+      <div className="py-8">
+        <Calendar onClickDay={handleClickDay} />
+      </div>
     </div>
   );
 }

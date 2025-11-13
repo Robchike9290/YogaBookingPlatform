@@ -21,7 +21,7 @@ export default function Book() {
   return (
     <div className="m-4">
       <BookingCalendar
-        dailyTitle={"Classes Available for "}
+        dailyTitle={"Classes Available to Book on "}
         monthlyTitle={"Class Schedule Date Picker"}
       />
     </div>

@@ -43,17 +43,17 @@ const dummyClassData = [
 // TODO: Update render behavior to not flash an out-of-format date on initial load.
 export default function DailyClassCalendar(props: SubcalendarProps) {
   return (
-    <div className="mx-8 max-h-96 overflow-auto rounded-lg bg-blue-100 px-8 text-center text-blue-600">
+    <div className="mx-8 my-4 rounded-lg bg-blue-300 text-center text-blue-600">
       <h1 className="text-3xl font-bold">
-        Classes Available for {props.currentDate}:
+        {props.title} {props.currentDate}:
       </h1>
-      <div>
+      <div className="max-h-72 overflow-auto">
         {dummyClassData.map((classData) => {
           if (props.currentDate === classData.date) {
             return (
               <div
                 key={classData.id}
-                className="m-6 grid grid-cols-6 grid-rows-1 rounded-md bg-blue-300 p-6 shadow-xl"
+                className="m-6 grid grid-cols-6 grid-rows-1 rounded-md bg-blue-600 p-6 shadow-xl text-black font-bold"
               >
                 <div className="col-span-5 col-start-1 row-start-1">
                   <h3>{classData.name}</h3>
@@ -62,7 +62,7 @@ export default function DailyClassCalendar(props: SubcalendarProps) {
                   <div>Length: {classData.length} minutes</div>
                 </div>
                 {/* TODO: Add functionality to add class to profile */}
-                <button className="col-start-6 row-start-1 m-2 rounded-md bg-blue-100 p-2 shadow-xl">
+                <button className="col-start-6 row-start-1 m-2 rounded-md bg-blue-300 p-2 shadow-xl">
                   Book
                 </button>
               </div>
