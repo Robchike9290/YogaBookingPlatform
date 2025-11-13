@@ -1,4 +1,3 @@
-// TODO: Move this to the top level and rename as a list.
 import React from "react";
 import { v4 } from "uuid";
 import { SubcalendarProps } from "@/types";
