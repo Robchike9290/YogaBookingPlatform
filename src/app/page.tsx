@@ -4,37 +4,13 @@ import { useState, useEffect } from "react";
 import AboutStudio from "@/app/_components/AboutStudio";
 import PricingPlans from "@/app/_components/PricingPlans";
 import CurrentStudioAndSelection from "@/app/_components/CurrentStudioAndSelection";
-import { v4 } from "uuid";
+import { usePlatformContext } from "@/_components/PlatformContext";
 
 export default function Home() {
-  // TODO: Update this to be actual DB data.  Have it update upon page load by withdrawing it from the DB.
-  const [allStudios, setAllStudios] = useState([
-    {
-      id: v4(),
-      name: "Crestview",
-    },
-    {
-      id: v4(),
-      name: "Bouldin",
-    },
-    {
-      id: v4(),
-      name: "Riata",
-    },
-    {
-      id: v4(),
-      name: "Downtown",
-    },
-    {
-      id: v4(),
-      name: "Mueller",
-    },
-  ]);
-
   const [backendStatus, setBackendStatus] = useState("Checking...");
-  const [currentStudioName, setCurrentStudioName] = useState(
-    allStudios[0].name,
-  );
+
+  const { allStudios, setCurrentStudioName, currentStudioName } =
+    usePlatformContext();
 
   useEffect(() => {
     // Check backend connection

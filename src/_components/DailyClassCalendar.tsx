@@ -47,13 +47,14 @@ export default function DailyClassCalendar(props: SubcalendarProps) {
       <h1 className="text-3xl font-bold">
         {props.title} {props.currentDate}:
       </h1>
+      <h2 className="font-bold">{props.subtitle}</h2>
       <div className="max-h-72 overflow-auto">
         {dummyClassData.map((classData) => {
           if (props.currentDate === classData.date) {
             return (
               <div
                 key={classData.id}
-                className="m-6 grid grid-cols-6 grid-rows-1 rounded-md bg-blue-600 p-6 shadow-xl text-black font-bold"
+                className="m-6 grid grid-cols-6 grid-rows-1 rounded-md bg-blue-600 p-6 font-bold text-black shadow-xl"
               >
                 <div className="col-span-5 col-start-1 row-start-1">
                   <h3>{classData.name}</h3>

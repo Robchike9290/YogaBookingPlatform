@@ -9,7 +9,9 @@ import React, { useEffect } from "react";
 
 export default function BookingCalendar({
   dailyTitle,
+  dailySubtitle,
   monthlyTitle,
+  monthlySubtitle,
 }: MasterCalendarProps) {
   const { currentDate, setCurrentDate } = usePlatformContext();
 
@@ -21,16 +23,21 @@ export default function BookingCalendar({
   }, []);
 
   return (
-    <div className="flex rounded-lg bg-blue-100 border-4 border-blue-300">
-      <div className="m-4 flex-1 bg-blue-300 shadow-lg rounded-lg">
+    <div className="flex rounded-lg border-4 border-blue-300 bg-blue-100">
+      <div className="m-4 flex-1 rounded-lg bg-blue-300 shadow-lg">
         <MonthlyClassCalendar
           title={monthlyTitle}
+          subtitle={monthlySubtitle}
           setCurrentDate={setCurrentDate}
         />
       </div>
-      <div className="m-4 flex-1 bg-blue-300 shadow-lg rounded-lg">
+      <div className="m-4 flex-1 rounded-lg bg-blue-300 shadow-lg">
         {/* TODO: Make this actually populate classes on calendar click */}
-        <DailyClassCalendar title={dailyTitle} currentDate={currentDate} />
+        <DailyClassCalendar
+          title={dailyTitle}
+          subtitle={dailySubtitle}
+          currentDate={currentDate}
+        />
       </div>
     </div>
   );

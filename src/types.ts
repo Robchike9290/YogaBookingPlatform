@@ -87,6 +87,9 @@ export interface PlatformContextType {
   setIsLoggedIn: (value: boolean) => void;
   currentDate: string;
   setCurrentDate: (value: string) => void;
+  currentStudioName: string;
+  setCurrentStudioName: (value: string) => void;
+  allStudios: { id: string; name: string }[];
 }
 
 export interface LoginProps {
@@ -107,9 +110,12 @@ export interface SubcalendarProps {
   setCurrentDate?: (value: string) => void;
   currentDate?: string;
   title?: string;
+  subtitle?: string;
 }
 
 export interface MasterCalendarProps {
   dailyTitle: string;
+  dailySubtitle: string;
   monthlyTitle: string;
+  monthlySubtitle: string;
 }

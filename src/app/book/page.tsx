@@ -1,28 +1,21 @@
 "use client";
+import { usePlatformContext } from "@/_components/PlatformContext";
 // TODO: Use <Suspense /> component to optimize this and other
 // client-side-rendered pages to render everything EXCEPT dynamic content.
 
-import MonthlyClassCalendar from "../../_components/MonthlyClassCalendar";
-import DailyClassCalendar from "../../_components/DailyClassCalendar";
-import { useState, useEffect } from "react";
-import { getDateParts } from "@/utils";
 import BookingCalendar from "../../_components/BookingCalendar";
 
 export default function Book() {
-  const [currentDate, setCurrentDate] = useState(Date());
-
-  useEffect(() => {
-    const today = new Date();
-    const [month, day, year] = getDateParts(today);
-
-    setCurrentDate(`${month}/${day}/${year}`);
-  }, []);
+  const { currentStudioName } = usePlatformContext();
 
   return (
     <div className="m-4">
+      {/* Add another location selector here */}
       <BookingCalendar
-        dailyTitle={"Classes Available to Book on "}
-        monthlyTitle={"Class Schedule Date Picker"}
+        dailyTitle={`Classes Available to Book at ${currentStudioName} on `}
+        dailySubtitle={`Below are the classes you can book at the ${currentStudioName} location for the chosen day.`}
+        monthlyTitle={`${currentStudioName} Location Class Schedule Date Picker`}
+        monthlySubtitle={`Pick a date from the calendar to see the classes scheduled at the ${currentStudioName} location for any given day.`}
       />
     </div>
   );
