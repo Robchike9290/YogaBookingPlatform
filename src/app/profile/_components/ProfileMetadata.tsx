@@ -54,7 +54,6 @@ export default function ProfileMetadata() {
       </div>
       <div className="col-start-2 m-4 overflow-scroll rounded-lg bg-blue-300 p-4 text-blue-600 shadow-lg">
         <h1 className="pb-4 text-center text-xl font-bold">User Info</h1>
-        {/* TODO: Update table to have scrollable text on overflow of each row */}
         <table className="table-auto border-collapse overflow-x-scroll">
           {Object.keys(targetObject).map((key) => {
             return (
