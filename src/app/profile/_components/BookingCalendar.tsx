@@ -25,7 +25,7 @@ export default function BookingCalendar() {
 
   return (
     // TODO: Get rid of giant gap above this element.
-    <div className="col-span-5 col-start-1 row-span-1 row-start-2 m-4 rounded-lg border-4 border-blue-300 bg-blue-100 text-blue-600">
+    <div className="m-4 grid grid-cols-6 rounded-lg border-4 border-blue-300 bg-blue-100 text-blue-600">
       <MonthlyClassCalendar title={"Booking Calendar"} />
       {/* TODO: Make this actually populate classe on calendar click */}
       <DailyClassCalendar

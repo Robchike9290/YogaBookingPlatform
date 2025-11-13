@@ -5,11 +5,21 @@ import BookingCalendar from "./_components/BookingCalendar";
 
 export default function Profile() {
   return (
-    <div className="grid grid-cols-5 grid-rows-2 text-blue-600">
-      <ProfileMetadata />
-      <Deals />
-      {/* TODO: Pass the name of the user and studio to the booking calendar as a prop or via context */}
-      <BookingCalendar />
-    </div>
+    <>
+      <div className="flex w-full text-blue-600">
+        <div className="flex-1">
+          <ProfileMetadata />
+        </div>
+        <div className="flex-1">
+          <Deals />
+        </div>
+      </div>
+      <div className="flex w-full">
+        {/* TODO: Pass the name of the user and studio to the booking calendar as a prop or via context */}
+        <div className="flex-1">
+          <BookingCalendar />
+        </div>
+      </div>
+    </>
   );
 }

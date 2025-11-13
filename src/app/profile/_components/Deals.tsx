@@ -62,7 +62,7 @@ const dummyDeals: Deal[] = [
 
 export default function Deals() {
   return (
-    <div className="col-span-3 col-start-3 row-span-1 row-start-1 m-4 h-3/5 overflow-scroll rounded-lg border-4 border-blue-300 bg-blue-100 text-blue-600">
+    <div className="m-4 h-[600px] overflow-scroll rounded-lg border-4 border-blue-300 bg-blue-100 text-blue-600">
       <h1 className="pt-4 text-center text-2xl font-bold">Deals</h1>
       <div>
         {dummyDeals.map((deal) => {

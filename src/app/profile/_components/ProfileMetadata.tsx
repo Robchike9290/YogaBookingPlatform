@@ -48,13 +48,13 @@ export default function ProfileMetadata() {
   const targetObject = dummyData[0];
 
   return (
-    <div className="align-center col-span-2 col-start-1 row-span-1 row-start-1 m-4 grid h-3/5 grid-cols-2 gap-4 rounded-lg border-4 border-blue-300 bg-blue-100">
-      <img
-        className="col-span-1 col-start-1 m-4 bg-blue-100 shadow-lg"
-        src={"/DelcineMajeed.jpg"}
-      />
-      <div className="col-span-1 col-start-2 m-4 overflow-scroll rounded-lg bg-blue-300 p-4 text-blue-600 shadow-lg">
+    <div className="align-center m-4 grid h-[600px] grid-cols-2 gap-4 rounded-lg border-4 border-blue-300 bg-blue-100">
+      <div className="col-start-1 overflow-hidden bg-blue-100">
+        <img className="overflow-hidden shadow-lg" src={"/DelcineMajeed.jpg"} />
+      </div>
+      <div className="col-start-2 m-4 overflow-scroll rounded-lg bg-blue-300 p-4 text-blue-600 shadow-lg">
         <h1 className="pb-4 text-center text-xl font-bold">User Info</h1>
+        {/* TODO: Update table to have scrollable text on overflow of each row */}
         <table className="table-auto border-collapse overflow-x-scroll">
           {Object.keys(targetObject).map((key) => {
             return (
