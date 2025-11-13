@@ -103,8 +103,13 @@ export interface UserInfoFormProps {
 }
 
 // Interfaces - Calendar
-export interface CalendarProps {
+export interface SubcalendarProps {
   setCurrentDate?: (value: string) => void;
   currentDate?: string;
   title?: string;
+}
+
+export interface MasterCalendarProps {
+  dailyTitle: string;
+  monthlyTitle: string;
 }

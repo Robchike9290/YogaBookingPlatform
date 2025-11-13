@@ -6,6 +6,7 @@ import MonthlyClassCalendar from "../../_components/MonthlyClassCalendar";
 import DailyClassCalendar from "../../_components/DailyClassCalendar";
 import { useState, useEffect } from "react";
 import { getDateParts } from "@/utils";
+import BookingCalendar from "../../_components/BookingCalendar";
 
 export default function Book() {
   const [currentDate, setCurrentDate] = useState(Date());
@@ -18,15 +19,10 @@ export default function Book() {
   }, []);
 
   return (
-    <div className="grid grid-cols-6 grid-rows-2">
-      <MonthlyClassCalendar
-        setCurrentDate={setCurrentDate}
-        title={"Class Schedule Date Picker"}
-      />
-      <DailyClassCalendar
-        // TODO: remove unnecessary prop values that can be drawn out of the context.
-        currentDate={currentDate}
-        title={"Classes Available for "}
+    <div className="m-4">
+      <BookingCalendar
+        dailyTitle={"Classes Available for "}
+        monthlyTitle={"Class Schedule Date Picker"}
       />
     </div>
   );

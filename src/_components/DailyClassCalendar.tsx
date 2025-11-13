@@ -1,7 +1,7 @@
 // TODO: Move this to the top level and rename as a list.
 import React from "react";
 import { v4 } from "uuid";
-import { CalendarProps } from "@/types";
+import { SubcalendarProps } from "@/types";
 
 // TODO: Move this to a "real" database
 const dummyClassData = [
@@ -41,9 +41,9 @@ const dummyClassData = [
 
 // TODO: Make this page unreachable if not logged in, redirect in this case.
 // TODO: Update render behavior to not flash an out-of-format date on initial load.
-export default function DailyClassCalendar(props: CalendarProps) {
+export default function DailyClassCalendar(props: SubcalendarProps) {
   return (
-    <div className="col-span-3 col-start-4 row-span-2 row-start-1 mx-8 max-h-96 overflow-auto rounded-lg border-4 border-blue-300 bg-blue-100 px-8 text-center text-blue-600">
+    <div className="mx-8 max-h-96 overflow-auto rounded-lg bg-blue-100 px-8 text-center text-blue-600">
       <h1 className="text-3xl font-bold">
         Classes Available for {props.currentDate}:
       </h1>
