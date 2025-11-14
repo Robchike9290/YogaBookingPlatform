@@ -2,7 +2,6 @@ import React from "react";
 import ProfileMetadata from "./_components/ProfileMetadata";
 import Deals from "./_components/Deals";
 import BookingCalendar from "../../_components/BookingCalendar";
-import { usePlatformContext } from "@/_components/PlatformContext";
 
 export default function Profile() {
   return (

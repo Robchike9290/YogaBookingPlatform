@@ -1,7 +1,7 @@
 "use client";
-import Link from "next/link";
 import React from "react";
 import { usePlatformContext } from "@/_components/PlatformContext";
+import NavLink from "@/app/_components/NavLink";
 
 export default function NavBar() {
   const { isLoggedIn } = usePlatformContext();
@@ -10,45 +10,27 @@ export default function NavBar() {
     <nav className="flex w-full rounded-lg border-4 border-blue-300 bg-blue-100 p-2">
       {isLoggedIn ? (
         <>
-          <Link
-            className="m-1 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
-            href="/"
-          >
+          <NavLink className="nav-link" href="/">
             Home
-          </Link>
-          <Link
-            className="m-1 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
-            href="/book"
-          >
+          </NavLink>
+          <NavLink className="nav-link" href="/book">
             Book
-          </Link>
-          <Link
-            className="m-1 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
-            href="/profile"
-          >
+          </NavLink>
+          <NavLink className="nav-link" href="/profile">
             My Profile
-          </Link>
-          <Link
-            className="m-1 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
-            href="/login"
-          >
+          </NavLink>
+          <NavLink className="nav-link" href="/login">
             Logout
-          </Link>
+          </NavLink>
         </>
       ) : (
         <>
-          <Link
-            className="m-1 w-1/4 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
-            href="/"
-          >
+          <NavLink className="nav-link" href="/">
             Landing Page
-          </Link>
-          <Link
-            className="m-1 w-1/4 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700"
-            href="/login"
-          >
+          </NavLink>
+          <NavLink className="nav-link" href="/login">
             Login
-          </Link>
+          </NavLink>
         </>
       )}
     </nav>

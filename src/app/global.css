@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-link {
+  @apply m-1 flex-1 text-center text-2xl font-bold text-blue-600 hover:text-purple-700 [&.active]:text-black;
+}
