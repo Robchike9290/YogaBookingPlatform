@@ -119,3 +119,8 @@ export interface MasterCalendarProps {
   monthlyTitle: string;
   monthlySubtitle: string;
 }
+
+export interface LocationPickerProps {
+  handleClickBookingButton: () => void
+  handleChangeStudioName: (event: any) => void
+}

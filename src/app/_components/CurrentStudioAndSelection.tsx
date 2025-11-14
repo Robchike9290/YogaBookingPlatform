@@ -3,6 +3,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { usePlatformContext } from "@/_components/PlatformContext";
 import { CurrentStudioAndSelectionProps } from "@/types";
+import LocationPicker from "@/_components/LocationPicker";
 
 // TODO: Move this to the back end.  Make pricing plans populate at load on front end based upon location, have them randomly update on backend and on a button click, see the new deals.
 const pricingPlans = ["Plan 1", "Plan 2", "Plan 3"];
@@ -36,23 +37,10 @@ export default function CurrentStudioAndSelection({
       </p>
       <br />
       <p>Click the button to book if you like what you see!</p>
-      <div className="grid grid-cols-2">
-        <select
-          className="col-start-1 row-start-1 m-8"
-          onChange={() => handleChangeStudioName(event)}
-        >
-          <option value="">Select a studio location</option>
-          {allStudios.map((studio) => {
-            return <option key={studio.id}>{studio.name}</option>;
-          })}
-        </select>
-        <button
-          className="col-start-2 m-4 rounded-md bg-blue-300 p-4 shadow-lg"
-          onClick={handleClickBookingButton}
-        >
-          Book class at this location
-        </button>
-      </div>
+      <LocationPicker 
+        handleClickBookingButton={handleClickBookingButton}
+        handleChangeStudioName={handleChangeStudioName}
+      />
     </div>
   );
 }
