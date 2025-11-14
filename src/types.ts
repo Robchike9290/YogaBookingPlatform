@@ -121,6 +121,6 @@ export interface MasterCalendarProps {
 }
 
 export interface LocationPickerProps {
-  handleClickBookingButton: () => void
-  handleChangeStudioName: (event: any) => void
+  handleClickBookingButton: () => void;
+  handleChangeStudioName: (event: any) => void;
 }

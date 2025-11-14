@@ -37,7 +37,7 @@ export default function CurrentStudioAndSelection({
       </p>
       <br />
       <p>Click the button to book if you like what you see!</p>
-      <LocationPicker 
+      <LocationPicker
         handleClickBookingButton={handleClickBookingButton}
         handleChangeStudioName={handleChangeStudioName}
       />
