@@ -30,13 +30,6 @@ export default function CurrentStudioAndSelection({
 
   return (
     <div className="col-span-2 col-start-1 row-span-1 row-start-1 m-8 rounded-lg border-4 border-blue-300 bg-blue-100 p-8 text-blue-600">
-      <h2 className="text-xl font-bold">Wanna sign up for a class?</h2>
-      <p>
-        Select a studio location from the dropdown bar to learn more about a
-        studio!
-      </p>
-      <br />
-      <p>Click the button to book if you like what you see!</p>
       <LocationPicker
         handleClickButton={handleClickButton}
         handleChangeStudioName={handleChangeStudioName}

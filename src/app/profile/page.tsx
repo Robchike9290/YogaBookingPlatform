@@ -48,11 +48,13 @@ export default function Profile() {
         </div>
       </div>
       {/* TODO: Update component to take custom string for button label */}
-      <LocationPicker
-        handleClickButton={handleClickButton}
-        handleChangeStudioName={handleChangeStudioName}
-        buttonCta={"See classes booked at this location"}
-      />
+      <div className="text-blue-600 font-bold bg-blue-100 m-4 border-4 border-blue-300 rounded-lg">
+        <LocationPicker
+          handleClickButton={handleClickButton}
+          handleChangeStudioName={handleChangeStudioName}
+          buttonCta={"See classes booked at this location"}
+        />
+      </div>
       <div className="m-4">
         {/* TODO: Pass the name of the user and studio to the booking calendar as a prop or via context */}
         <BookingCalendar
