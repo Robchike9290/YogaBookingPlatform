@@ -34,6 +34,11 @@ export default function CurrentStudioAndSelection({
         handleClickButton={handleClickButton}
         handleChangeStudioName={handleChangeStudioName}
         buttonCta={"Book class at this location"}
+        title={"Wanna sign up for a class?"}
+        description={
+          "Select a studio location from the dropdown bar to learn more about a studio!"
+        }
+        selectCta={"Click the button to book if you like what you see!"}
       />
     </div>
   );

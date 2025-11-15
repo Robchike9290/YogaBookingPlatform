@@ -48,11 +48,15 @@ export default function Profile() {
         </div>
       </div>
       {/* TODO: Update component to take custom string for button label */}
-      <div className="text-blue-600 font-bold bg-blue-100 m-4 border-4 border-blue-300 rounded-lg">
+      <div className="m-4 rounded-lg border-4 border-blue-300 bg-blue-100 text-blue-600">
         <LocationPicker
           handleClickButton={handleClickButton}
           handleChangeStudioName={handleChangeStudioName}
           buttonCta={"See classes booked at this location"}
+          title={"Wanna see this classes you've booked at a specific studio?"}
+          description={
+            "Select a studio from the dropdown and click the button!"
+          }
         />
       </div>
       <div className="m-4">

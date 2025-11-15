@@ -139,4 +139,7 @@ export interface LocationPickerProps {
   handleClickButton: () => void;
   handleChangeStudioName: (event: any) => void;
   buttonCta: string;
+  title: string;
+  description: string;
+  selectCta?: string;
 }
