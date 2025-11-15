@@ -1,9 +1,42 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import ProfileMetadata from "./_components/ProfileMetadata";
 import Deals from "./_components/Deals";
 import BookingCalendar from "../../_components/BookingCalendar";
+import { usePlatformContext } from "@/_components/PlatformContext";
+import LocationPicker from "@/_components/LocationPicker";
+import { dummyClassData } from "@/lib/dummyData";
+import { ClassData } from "@/types";
 
 export default function Profile() {
+  const { setCurrentStudioName, currentStudioName, currentUser } =
+    usePlatformContext();
+  const [bookedClasses, setBookedClasses] = useState<ClassData[]>([]);
+
+  // TODO: Calculate bookings for location once backend is hooked up for real.
+  const handleClickButton = () => {
+    console.log("Pulling bookings for location...");
+    const userClasses: ClassData[] = [];
+    // TODO: Refine this function to only handle classes in current month once
+    // data is real, this will blow up BIG TIME as classes are added.
+    dummyClassData.forEach((bookableClass) => {
+      if (
+        bookableClass.participants.has(currentUser) &&
+        bookableClass.location === currentStudioName
+      ) {
+        userClasses.push(bookableClass);
+      }
+    });
+
+    setBookedClasses(userClasses);
+  };
+
+  const handleChangeStudioName = (event: any) => {
+    const studioName = event.target.value;
+    setCurrentStudioName(studioName);
+  };
+
   return (
     <>
       <div className="flex text-blue-600">
@@ -14,6 +47,12 @@ export default function Profile() {
           <Deals />
         </div>
       </div>
+      {/* TODO: Update component to take custom string for button label */}
+      <LocationPicker
+        handleClickButton={handleClickButton}
+        handleChangeStudioName={handleChangeStudioName}
+        buttonCta={"See classes booked at this location"}
+      />
       <div className="m-4">
         {/* TODO: Pass the name of the user and studio to the booking calendar as a prop or via context */}
         <BookingCalendar

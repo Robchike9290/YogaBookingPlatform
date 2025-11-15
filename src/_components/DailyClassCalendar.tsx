@@ -1,42 +1,6 @@
 import React from "react";
-import { v4 } from "uuid";
 import { SubcalendarProps } from "@/types";
-
-// TODO: Move this to a "real" database
-const dummyClassData = [
-  {
-    id: v4(),
-    name: "Vinyasa II",
-    instructor: "Jaden",
-    startTime: "1:00 PM",
-    date: "10/20/2025",
-    length: 75,
-  },
-  {
-    id: v4(),
-    name: "Candlelight Yin",
-    instructor: "Darren",
-    startTime: "8:00 PM",
-    date: "10/19/2025",
-    length: 60,
-  },
-  {
-    id: v4(),
-    name: "Slow Vinyasa",
-    instructor: "Alyssa",
-    startTime: "7:30 AM",
-    date: "10/19/2025",
-    length: 60,
-  },
-  {
-    id: v4(),
-    name: "Hatha",
-    instructor: "Alyssa",
-    startTime: "7:30 AM",
-    date: "10/23/2025",
-    length: 60,
-  },
-];
+import { dummyClassData } from "@/lib/dummyData";
 
 // TODO: Make this page unreachable if not logged in, redirect in this case.
 // TODO: Update render behavior to not flash an out-of-format date on initial load.

@@ -15,7 +15,7 @@ export default function CurrentStudioAndSelection({
   const router = useRouter();
   const { isLoggedIn } = usePlatformContext();
 
-  const handleClickBookingButton = () => {
+  const handleClickButton = () => {
     if (isLoggedIn) {
       router.push("/book");
     } else if (!isLoggedIn) {
@@ -38,8 +38,9 @@ export default function CurrentStudioAndSelection({
       <br />
       <p>Click the button to book if you like what you see!</p>
       <LocationPicker
-        handleClickBookingButton={handleClickBookingButton}
+        handleClickButton={handleClickButton}
         handleChangeStudioName={handleChangeStudioName}
+        buttonCta={"Book class at this location"}
       />
     </div>
   );

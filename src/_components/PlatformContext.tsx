@@ -32,7 +32,10 @@ export function PlatformContextProvider({ children }: { children: ReactNode }) {
       name: "Mueller",
     },
   ]);
+  // TODO: Remove this state, currentUser can express whather someone is logged in too.
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  // TODO: Set this as a unique ID, not a name in order to improve security.
+  const [currentUser, setCurrentUser] = useState("Delcine Majeed");
   const [currentDate, setCurrentDate] = useState(Date());
   const [currentStudioName, setCurrentStudioName] = useState(
     allStudios[0].name,
@@ -43,6 +46,8 @@ export function PlatformContextProvider({ children }: { children: ReactNode }) {
       value={{
         isLoggedIn,
         setIsLoggedIn,
+        currentUser,
+        setCurrentUser,
         currentDate,
         setCurrentDate,
         currentStudioName,

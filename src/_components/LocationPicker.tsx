@@ -5,8 +5,9 @@ import { usePlatformContext } from "./PlatformContext";
 import React from "react";
 
 export default function LocationPicker({
-  handleClickBookingButton,
+  handleClickButton,
   handleChangeStudioName,
+  buttonCta,
 }: LocationPickerProps) {
   const { allStudios } = usePlatformContext();
   return (
@@ -22,9 +23,9 @@ export default function LocationPicker({
       </select>
       <button
         className="col-start-2 m-4 rounded-md bg-blue-300 p-4 shadow-lg"
-        onClick={handleClickBookingButton}
+        onClick={handleClickButton}
       >
-        Book class at this location
+        {buttonCta}
       </button>
     </div>
   );

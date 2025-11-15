@@ -30,6 +30,19 @@ export type Restriction = {
   name: string;
 };
 
+export type ClassData = {
+  id: string;
+  name: string;
+  instructor: string;
+  startTime: string;
+  // Find a way to replace this with an actual Date type value
+  date: string;
+  length: number;
+  participants: Set<string>;
+  maxParticipants: number;
+  location: string;
+};
+
 // Interfaces - Profile
 export interface ProfileData {
   id: string;
@@ -85,6 +98,8 @@ export interface Deal {
 export interface PlatformContextType {
   isLoggedIn: boolean;
   setIsLoggedIn: (value: boolean) => void;
+  currentUser: string;
+  setCurrentUser: (value: string) => void;
   currentDate: string;
   setCurrentDate: (value: string) => void;
   currentStudioName: string;
@@ -121,6 +136,7 @@ export interface MasterCalendarProps {
 }
 
 export interface LocationPickerProps {
-  handleClickBookingButton: () => void;
+  handleClickButton: () => void;
   handleChangeStudioName: (event: any) => void;
+  buttonCta: string;
 }
