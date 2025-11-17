@@ -145,3 +145,7 @@ export interface LocationPickerProps {
   description: string;
   selectCta?: string;
 }
+
+export interface BookingModalProps {
+  setModalIsOpen: (value: boolean) => void;
+}

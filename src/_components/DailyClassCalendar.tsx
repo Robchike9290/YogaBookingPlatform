@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { SubcalendarProps } from "@/types";
 import { dummyClassData } from "@/lib/dummyData";
+import BookingModal from "./BookingModal";
 
 // TODO: Make this page unreachable if not logged in, redirect in this case.
 // TODO: Update render behavior to not flash an out-of-format date on initial load.
 export default function DailyClassCalendar(props: SubcalendarProps) {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setModalIsOpen(true);
+  };
+
   return (
     <div className="mx-8 my-4 rounded-lg bg-blue-300 text-center text-blue-600">
       <h1 className="text-3xl font-bold">
@@ -26,7 +33,10 @@ export default function DailyClassCalendar(props: SubcalendarProps) {
                   <div>Length: {classData.length} minutes</div>
                 </div>
                 {/* TODO: Add functionality to add class to profile */}
-                <button className="col-start-6 row-start-1 m-2 rounded-md bg-blue-300 p-2 shadow-xl">
+                <button
+                  className="col-start-6 row-start-1 m-2 rounded-md bg-blue-300 p-2 shadow-xl"
+                  onClick={handleClick}
+                >
                   {props.isOnProfilePage ? "Modify" : "Book"}
                 </button>
               </div>
@@ -34,6 +44,7 @@ export default function DailyClassCalendar(props: SubcalendarProps) {
           }
         })}
       </div>
+      {modalIsOpen ? <BookingModal setModalIsOpen={setModalIsOpen} /> : null}
     </div>
   );
 }
