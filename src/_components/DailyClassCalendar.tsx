@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { SubcalendarProps } from "@/types";
 import { dummyClassData } from "@/lib/dummyData";
-import BookingModal from "./BookingModal";
+import BookingCreationModal from "@/app/book/_components/BookingCreationModal";
+import BookingModificationModal from "@/app/profile/_components/BookingModificationModal";
 
 // TODO: Make this page unreachable if not logged in, redirect in this case.
 // TODO: Update render behavior to not flash an out-of-format date on initial load.
@@ -44,7 +45,13 @@ export default function DailyClassCalendar(props: SubcalendarProps) {
           }
         })}
       </div>
-      {modalIsOpen ? <BookingModal setModalIsOpen={setModalIsOpen} /> : null}
+      {modalIsOpen ? (
+        props.isOnProfilePage ? (
+          <BookingModificationModal setModalIsOpen={setModalIsOpen} />
+        ) : (
+          <BookingCreationModal setModalIsOpen={setModalIsOpen} />
+        )
+      ) : null}
     </div>
   );
 }
