@@ -27,7 +27,7 @@ export default function DailyClassCalendar(props: SubcalendarProps) {
                 </div>
                 {/* TODO: Add functionality to add class to profile */}
                 <button className="col-start-6 row-start-1 m-2 rounded-md bg-blue-300 p-2 shadow-xl">
-                  Book
+                  {props.isOnProfilePage ? "Modify" : "Book"}
                 </button>
               </div>
             );

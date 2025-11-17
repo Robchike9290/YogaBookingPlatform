@@ -16,6 +16,7 @@ export default function Book() {
         dailySubtitle={`Below are the classes you can book at the ${currentStudioName} location for the chosen day.`}
         monthlyTitle={`${currentStudioName} Location Class Schedule Date Picker`}
         monthlySubtitle={`Pick a date from the calendar to see the classes scheduled at the ${currentStudioName} location for any given day.`}
+        isOnProfilePage={false}
       />
     </div>
   );

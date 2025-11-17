@@ -68,6 +68,7 @@ export default function Profile() {
           monthlySubtitle={
             "Pick a date from the calendar to see the classes you have booked for any given day."
           }
+          isOnProfilePage={true}
         />
       </div>
     </>

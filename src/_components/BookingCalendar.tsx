@@ -12,6 +12,7 @@ export default function BookingCalendar({
   dailySubtitle,
   monthlyTitle,
   monthlySubtitle,
+  isOnProfilePage,
 }: MasterCalendarProps) {
   const { currentDate, setCurrentDate } = usePlatformContext();
 
@@ -37,6 +38,7 @@ export default function BookingCalendar({
           title={dailyTitle}
           subtitle={dailySubtitle}
           currentDate={currentDate}
+          isOnProfilePage={isOnProfilePage}
         />
       </div>
     </div>

@@ -126,6 +126,7 @@ export interface SubcalendarProps {
   currentDate?: string;
   title?: string;
   subtitle?: string;
+  isOnProfilePage?: boolean;
 }
 
 export interface MasterCalendarProps {
@@ -133,6 +134,7 @@ export interface MasterCalendarProps {
   dailySubtitle: string;
   monthlyTitle: string;
   monthlySubtitle: string;
+  isOnProfilePage: boolean;
 }
 
 export interface LocationPickerProps {
