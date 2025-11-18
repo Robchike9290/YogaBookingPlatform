@@ -17,7 +17,12 @@ export default function BookingModificationModal({
       }
     >
       <div className="rounded-lg border-4 border-blue-300 bg-blue-100">
-        <h2>Modify Booking</h2>
+        <h2 className={"text-2xl font-bold"}>Modify Booking</h2>
+        {/* TODO: Finish this form */}
+        <form>
+          <input></input>
+          <label></label>
+        </form>
         <button onClick={handleClose}>Close</button>
       </div>
     </div>

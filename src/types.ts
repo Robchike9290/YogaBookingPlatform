@@ -43,6 +43,12 @@ export type ClassData = {
   location: string;
 };
 
+export type Guest = {
+  name: string;
+  email: string;
+  id: string;
+};
+
 // Interfaces - Profile
 export interface ProfileData {
   id: string;
