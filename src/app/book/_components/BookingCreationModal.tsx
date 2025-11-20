@@ -49,6 +49,10 @@ export default function BookingCreationModal({
   );
 
   const handleCreateBooking = (event: any) => {
+    if (!event.target.checkValidity()) {
+      return;
+    }
+
     event.preventDefault();
     // TODO: Put in actual booking creation logic here.
     console.log("Creating booking...");
@@ -60,7 +64,7 @@ export default function BookingCreationModal({
       <div className="flex flex-col rounded-lg border-4 border-blue-300 bg-blue-100 p-4">
         <h2 className={"text-2xl font-bold"}>Book Class</h2>
         {/* TODO: Make the validations on this form actually work. */}
-        <form className="pb-2">
+        <form className="pb-2" onSubmit={handleCreateBooking}>
           <p className="mr-4 inline-block">Will you be bringing any guests?</p>
           <input
             type="radio"
@@ -107,52 +111,53 @@ export default function BookingCreationModal({
             ? guests.map((guest) => {
                 return (
                   <>
-                    {/* TODO: Make this a "real" <form> element, fix layout shift via debounce and/or grow-down */}
                     <div key={guest.id} className="py-2">
                       <strong className="pr-4">Guest #{guest.id + 1}:</strong>
                       <label htmlFor="firstName" className="pr-2">
                         First name:
                       </label>
                       <input
-                        id="firstName"
+                        id={`firstName-guest${guest.id}`}
                         type="text"
                         className="mr-4"
-                        pattern="[A-Za-z]"
+                        pattern="[A-Za-z]+"
                         minLength={1}
                         maxLength={30}
+                        required
                       />
                       <label htmlFor="lastName" className="pr-2">
                         Last name:
                       </label>
                       <input
-                        id="lastName"
+                        id={`lastName-guest${guest.id}`}
                         type="text"
                         className="mr-4"
-                        pattern="[A-Za-z]"
+                        pattern="[A-Za-z]+"
                         minLength={1}
                         maxLength={30}
+                        required
                       />
                       <label htmlFor="email" className="pr-2">
                         Email address:
                       </label>
                       <input
-                        id="email"
+                        id={`email-guest${guest.id}`}
                         type="email"
                         className="mr-4"
-                        pattern="[A-Za-z]"
+                        // There are better, more complex ways to verify email by actually
+                        // sending one and verifying the address is active, but this regex
+                        // works for a personal app.
+                        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                         minLength={1}
                         maxLength={30}
+                        required
                       />
                     </div>
                   </>
                 );
               })
             : null}
-          <button
-            type="submit"
-            className={"rounded-lg bg-blue-300 p-2"}
-            onClick={handleCreateBooking}
-          >
+          <button type="submit" className={"rounded-lg bg-blue-300 p-2"}>
             Book Class
           </button>
         </form>
