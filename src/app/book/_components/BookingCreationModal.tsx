@@ -29,6 +29,11 @@ export default function BookingCreationModal({
     setGuests(guests);
   };
 
+  const handleNotBringingGuests = () => {
+    setIsBringingGuests(false);
+    setGuests([]);
+  };
+
   const debouncedOnChange = useCallback(
     (e: any) => {
       const value = e.target.value;
@@ -71,7 +76,7 @@ export default function BookingCreationModal({
             type="radio"
             id="no"
             name="guestsBoolean"
-            onChange={() => setIsBringingGuests(false)}
+            onChange={handleNotBringingGuests}
             className="mr-1 inline-block"
           />
           <label htmlFor="no">No</label>
@@ -93,7 +98,7 @@ export default function BookingCreationModal({
               <br />
             </div>
           ) : null}
-          {guests.length > 0
+          {guests.length > 0 && isBringingGuests === true
             ? guests.map((guest) => {
                 return (
                   <>
