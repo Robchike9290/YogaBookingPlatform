@@ -46,7 +46,7 @@ export type ClassData = {
 export type Guest = {
   name: string;
   email: string;
-  id: string;
+  id: number;
 };
 
 // Interfaces - Profile
