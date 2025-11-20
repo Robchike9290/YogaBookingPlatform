@@ -30,7 +30,7 @@ export default function CurrentStudioAndSelection({
 
   return (
     // TODO: Add in testimonials to fill in blank square
-    <div className="col-span-1 col-start-2 row-span-1 row-start-1 m-8 rounded-lg border-4 border-blue-300 bg-blue-100 p-8 text-blue-600">
+    <div className="col-span-2 col-start-1 row-span-1 row-start-2 mx-auto w-1/2 rounded-lg border-4 border-blue-300 bg-blue-100 p-8 text-blue-600">
       <LocationPicker
         handleClickButton={handleClickButton}
         handleChangeStudioName={handleChangeStudioName}

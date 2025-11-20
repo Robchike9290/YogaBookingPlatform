@@ -5,11 +5,12 @@ import AboutStudio from "@/app/_components/AboutStudio";
 import PricingPlans from "@/app/_components/PricingPlans";
 import CurrentStudioAndSelection from "@/app/_components/CurrentStudioAndSelection";
 import { usePlatformContext } from "@/_components/PlatformContext";
+import WelcomeBack from "./_components/WelcomeBack";
 
 export default function Home() {
   const [backendStatus, setBackendStatus] = useState("Checking...");
 
-  const { allStudios, setCurrentStudioName, currentStudioName } =
+  const { allStudios, setCurrentStudioName, currentStudioName, isLoggedIn } =
     usePlatformContext();
 
   useEffect(() => {
@@ -22,12 +23,18 @@ export default function Home() {
 
   return (
     <div className="grid grid-cols-5 grid-rows-3">
-      <CurrentStudioAndSelection
-        allStudios={allStudios}
-        setCurrentStudioName={setCurrentStudioName}
-      />
-      <PricingPlans />
-      <AboutStudio currentStudioName={currentStudioName} />
+      {isLoggedIn ? (
+        <>
+          <WelcomeBack />
+          <CurrentStudioAndSelection
+            allStudios={allStudios}
+            setCurrentStudioName={setCurrentStudioName}
+          />
+          <AboutStudio currentStudioName={currentStudioName} />
+        </>
+      ) : (
+        <PricingPlans />
+      )}
     </div>
   );
 }

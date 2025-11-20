@@ -27,7 +27,6 @@ export default function LocationPicker({
         </>
       ) : null}
       <select onChange={() => handleChangeStudioName(event)}>
-        <option value="">Select a studio location</option>
         {allStudios.map((studio) => {
           return <option key={studio.id}>{studio.name}</option>;
         })}

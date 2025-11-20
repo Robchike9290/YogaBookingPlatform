@@ -35,11 +35,11 @@ export default function Login({ isLoggedIn }: LoginProps) {
         // and the components have a base styling to them most of the time.
         <div className="justify-self-center rounded-lg border-4 border-blue-300 bg-blue-100 p-6">
           <UserInfoForm
-            formTitle={"Login"}
+            formTitle={"Log In"}
             handleUsernameChange={handleUsernameChange}
             handlePasswordChange={handlePasswordChange}
             handleSubmit={handleSubmit}
-            formCta={"Login"}
+            formCta={"Log In"}
           />
           <SignupCTA />
         </div>

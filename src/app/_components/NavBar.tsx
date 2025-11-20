@@ -29,7 +29,7 @@ export default function NavBar() {
             Landing Page
           </NavLink>
           <NavLink className="nav-link" href="/login">
-            Login
+            Log In or Sign Up
           </NavLink>
         </>
       )}
