@@ -1,5 +1,5 @@
 import { BookingModalProps } from "@/types";
-import React, { useState } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { Guest } from "@/types";
 import { v4 } from "uuid";
 
@@ -8,15 +8,16 @@ export default function BookingCreationModal({
 }: BookingModalProps) {
   const [isBringingGuests, setIsBringingGuests] = useState(false);
   const [guests, setGuests] = useState<Guest[]>([]);
+  const debounceRef = useRef<NodeJS.Timeout>();
 
   const handleClose = () => {
     setModalIsOpen(false);
   };
 
-  const handleNumberOfGuests = (event: any) => {
+  const handleNumberOfGuests = (number: number) => {
     let guests: Guest[] = [];
 
-    for (let i = 0; i < event.target.value; i++) {
+    for (let i = 0; i < number; i++) {
       guests.push({
         // TODO: Make these real names later.
         name: "",
@@ -27,6 +28,21 @@ export default function BookingCreationModal({
 
     setGuests(guests);
   };
+
+  const debouncedOnChange = useCallback(
+    (e: any) => {
+      const value = e.target.value;
+
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current);
+      }
+
+      debounceRef.current = setTimeout(() => {
+        handleNumberOfGuests(value);
+      }, 300);
+    },
+    [handleNumberOfGuests],
+  );
 
   const handleCreateBooking = (event: any) => {
     event.preventDefault();
@@ -72,7 +88,7 @@ export default function BookingCreationModal({
                 min="0"
                 /* TODO: Put in logic to set a maximum number of guests at 4 OR the number of places left in the class. */
                 max="4"
-                onChange={handleNumberOfGuests}
+                onChange={debouncedOnChange}
               />
               <br />
             </div>
