@@ -60,12 +60,14 @@ export default function BookingCreationModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-600 bg-opacity-90">
-      <div className="flex flex-col rounded-lg border-4 border-blue-300 bg-blue-100 p-4">
+    <div className="fixed inset-0 z-50 flex bg-gray-600 bg-opacity-90">
+      <div className="fixed left-1/2 top-[30vh] w-1/2 -translate-x-1/2 rounded-lg border-4 border-blue-300 bg-blue-100 p-4">
         <h2 className={"text-2xl font-bold"}>Book Class</h2>
         {/* TODO: Make the validations on this form actually work. */}
         <form className="pb-2" onSubmit={handleCreateBooking}>
-          <p className="mr-4 inline-block">Will you be bringing any guests?</p>
+          <p className="mr-4 inline-block pb-2">
+            Will you be bringing any guests?
+          </p>
           <input
             type="radio"
             id="yes"
@@ -82,19 +84,16 @@ export default function BookingCreationModal({
             name="guestsBoolean"
             onChange={handleNotBringingGuests}
             className="mr-1 inline-block"
+            required
           />
           <label htmlFor="no">No</label>
           <br />
           {isBringingGuests ? (
             <div className="pb-2">
-              <label
-                htmlFor="quantity"
-                className="float-left mr-4 inline-block"
-              >
+              <label htmlFor="quantity" className="mr-4 inline-block">
                 How many guests are you bringing?
               </label>
               <input
-                className="float-right"
                 type="number"
                 id="quantity"
                 name="quantity"
@@ -112,7 +111,9 @@ export default function BookingCreationModal({
                 return (
                   <>
                     <div key={guest.id} className="py-2">
-                      <strong className="pr-4">Guest #{guest.id + 1}:</strong>
+                      <strong className="m-2 pr-4">
+                        Guest #{guest.id + 1}:
+                      </strong>
                       <label htmlFor="firstName" className="pr-2">
                         First name:
                       </label>
@@ -157,7 +158,7 @@ export default function BookingCreationModal({
                 );
               })
             : null}
-          <button type="submit" className={"rounded-lg bg-blue-300 p-2"}>
+          <button type="submit" className={"m-2 rounded-lg bg-blue-300 p-2"}>
             Book Class
           </button>
         </form>
