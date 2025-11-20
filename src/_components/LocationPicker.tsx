@@ -13,30 +13,29 @@ export default function LocationPicker({
   selectCta,
 }: LocationPickerProps) {
   const { allStudios } = usePlatformContext();
+
   return (
-    <div className="grid grid-cols-2">
-      <div className="col-start-1 row-start-1 m-8">
-        <h2 className="text-2xl font-bold">{title}</h2>
-        <br />
-        <p>{description}</p>
-        <br />
-        {selectCta ? (
-          <>
-            <p>{selectCta}</p>
-            <br />
-          </>
-        ) : null}
-        <select onChange={() => handleChangeStudioName(event)}>
-          <option value="">Select a studio location</option>
-          {allStudios.map((studio) => {
-            return <option key={studio.id}>{studio.name}</option>;
-          })}
-          {/* TODO: find out how to display generic option for just when on 
-            profile and you want to see ALL your classes. */}
-        </select>
-      </div>
+    <div className="m-8 w-fit">
+      <h2 className="text-2xl font-bold">{title}</h2>
+      <br />
+      <p>{description}</p>
+      <br />
+      {selectCta ? (
+        <>
+          <p>{selectCta}</p>
+          <br />
+        </>
+      ) : null}
+      <select onChange={() => handleChangeStudioName(event)}>
+        <option value="">Select a studio location</option>
+        {allStudios.map((studio) => {
+          return <option key={studio.id}>{studio.name}</option>;
+        })}
+        {/* TODO: find out how to display generic option for just when on 
+          profile and you want to see ALL your classes. */}
+      </select>
       <button
-        className="col-start-2 m-4 rounded-md bg-blue-300 p-4 font-bold shadow-lg"
+        className="m-4 h-min rounded-md bg-blue-300 p-2 font-bold shadow-lg"
         onClick={handleClickButton}
       >
         {buttonCta}
