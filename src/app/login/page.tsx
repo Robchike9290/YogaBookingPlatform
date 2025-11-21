@@ -5,11 +5,7 @@ import SignupCTA from "./_components/signupCta";
 import { LoginProps } from "@/types";
 import { usePlatformContext } from "@/_components/PlatformContext";
 import { useRouter } from "next/navigation";
-
-const dummyLogin = {
-  username: "meow",
-  password: "biscuits@gmail.com",
-};
+import { login } from "@/data";
 
 export default function Login({ isLoggedIn }: LoginProps) {
   const [username, setUsername] = useState("");
@@ -32,7 +28,7 @@ export default function Login({ isLoggedIn }: LoginProps) {
     // if not, navigate to signup screen with error message displayed.
     e.preventDefault();
     console.log("submit handled!", username, password);
-    if (username === dummyLogin.username && password === dummyLogin.password) {
+    if (username === login.username && password === login.password) {
       setCurrentUser(username);
       setIsLoggedIn(true);
       router.push("/");

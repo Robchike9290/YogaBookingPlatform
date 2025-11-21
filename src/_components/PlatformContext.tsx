@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, ReactNode } from "react";
 import { PlatformContextType } from "@/types";
-import { v4 } from "uuid";
+import { studios } from "@/data";
 
 const PlatformContext = createContext<PlatformContextType | undefined>(
   undefined,
@@ -10,28 +10,7 @@ const PlatformContext = createContext<PlatformContextType | undefined>(
 
 export function PlatformContextProvider({ children }: { children: ReactNode }) {
   // TODO: Update this to be actual DB data.  Have it update upon page load by withdrawing it from the DB.
-  const [allStudios, setAllStudios] = useState([
-    {
-      id: v4(),
-      name: "Crestview",
-    },
-    {
-      id: v4(),
-      name: "Bouldin",
-    },
-    {
-      id: v4(),
-      name: "Riata",
-    },
-    {
-      id: v4(),
-      name: "Downtown",
-    },
-    {
-      id: v4(),
-      name: "Mueller",
-    },
-  ]);
+  const [allStudios, setAllStudios] = useState(studios);
   // TODO: Remove this state, currentUser can express whather someone is logged in too.
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   // const [isLoggedIn, setIsLoggedIn] = useState(false);

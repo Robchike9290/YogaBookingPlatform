@@ -5,9 +5,6 @@ import { usePlatformContext } from "@/_components/PlatformContext";
 import { CurrentStudioAndSelectionProps } from "@/types";
 import LocationPicker from "@/_components/LocationPicker";
 
-// TODO: Move this to the back end.  Make pricing plans populate at load on front end based upon location, have them randomly update on backend and on a button click, see the new deals.
-const pricingPlans = ["Plan 1", "Plan 2", "Plan 3"];
-
 export default function CurrentStudioAndSelection({
   allStudios,
   setCurrentStudioName,
