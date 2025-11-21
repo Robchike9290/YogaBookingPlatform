@@ -3,10 +3,19 @@ import React, { useState } from "react";
 import UserInfoForm from "@/_components/UserInfoForm";
 import SignupCTA from "./_components/signupCta";
 import { LoginProps } from "@/types";
+import { usePlatformContext } from "@/_components/PlatformContext";
+import { useRouter } from "next/navigation";
+
+const dummyLogin = {
+  username: "meow",
+  password: "biscuits@gmail.com",
+};
 
 export default function Login({ isLoggedIn }: LoginProps) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const { setCurrentUser, setIsLoggedIn } = usePlatformContext();
+  const router = useRouter();
 
   const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
@@ -16,11 +25,20 @@ export default function Login({ isLoggedIn }: LoginProps) {
     setUsername(event.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: any) => {
+    // TODO: Update this function to do REAL validation from a db and a JWT.
     // check whether login/password combo is valid
     // if so, navigate to profile page
     // if not, navigate to signup screen with error message displayed.
-    console.log("submit handled!");
+    e.preventDefault();
+    console.log("submit handled!", username, password);
+    if (username === dummyLogin.username && password === dummyLogin.password) {
+      setCurrentUser(username);
+      setIsLoggedIn(true);
+      router.push("/");
+    } else {
+      alert("Insert the name and password for the one true user!");
+    }
   };
 
   return (

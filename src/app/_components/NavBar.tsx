@@ -2,9 +2,25 @@
 import React from "react";
 import { usePlatformContext } from "@/_components/PlatformContext";
 import NavLink from "@/app/_components/NavLink";
+import { useRouter } from "next/navigation";
 
 export default function NavBar() {
-  const { isLoggedIn } = usePlatformContext();
+  const {
+    isLoggedIn,
+    setIsLoggedIn,
+    setCurrentUser,
+    setCurrentStudioName,
+    allStudios,
+  } = usePlatformContext();
+
+  const router = useRouter();
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setCurrentUser("");
+    setCurrentStudioName(allStudios[0].name);
+    router.push("/");
+  };
 
   return (
     <nav className="flex w-full rounded-lg border-4 border-blue-300 bg-blue-100 p-2">
@@ -19,7 +35,11 @@ export default function NavBar() {
           <NavLink className="nav-link" href="/profile">
             My Profile
           </NavLink>
-          <NavLink className="nav-link" href="/login">
+          <NavLink
+            className="nav-link"
+            href="/login"
+            handleClick={handleLogout}
+          >
             Logout
           </NavLink>
         </>

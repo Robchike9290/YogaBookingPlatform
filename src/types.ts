@@ -54,11 +54,13 @@ export interface ProfileData {
   id: string;
   firstName: string;
   lastName: string;
+  userName: string;
   bio: string;
   email: string;
   preferredLocation: StudioLocation;
   classesTaken: number;
   fitnessRank: FitnessRank;
+  // TODO: Find out how to store profile password and username in a secure way. Maybe a hash + salt?
 }
 
 // Interfaces - Studio
