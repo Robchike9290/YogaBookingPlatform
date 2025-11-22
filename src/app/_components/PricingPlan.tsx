@@ -6,7 +6,7 @@ export default function PricingPlan(props: PricingPlanPropTypes) {
   const router = useRouter();
   // TODO: Move to route.
   const handleSignUp = () => {
-    router.push("/book");
+    router.push("/signup");
   };
 
   return (

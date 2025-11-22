@@ -6,7 +6,6 @@ import { CurrentStudioAndSelectionProps } from "@/types";
 import LocationPicker from "@/_components/LocationPicker";
 
 export default function CurrentStudioAndSelection({
-  allStudios,
   setCurrentStudioName,
 }: CurrentStudioAndSelectionProps) {
   const router = useRouter();

@@ -63,7 +63,8 @@ export default function BookingCreationModal({
     <div className="fixed inset-0 z-50 flex bg-gray-600 bg-opacity-90">
       <div className="fixed left-1/2 top-[30vh] w-1/2 -translate-x-1/2 rounded-lg border-4 border-blue-300 bg-blue-100 p-4">
         <h2 className={"text-2xl font-bold"}>Book Class</h2>
-        {/* TODO: Make the validations on this form actually work. */}
+        {/* TODO: Make the rows on this form populate via props so you can 
+        combine this and the other modal into a common component */}
         <form className="pb-2" onSubmit={handleCreateBooking}>
           <p className="mr-4 inline-block pb-2">
             Will you be bringing any guests?
@@ -114,7 +115,10 @@ export default function BookingCreationModal({
                       <strong className="m-2 pr-4">
                         Guest #{guest.id + 1}:
                       </strong>
-                      <label htmlFor="firstName" className="pr-2">
+                      <label
+                        htmlFor={`firstName-guest${guest.id}`}
+                        className="pr-2"
+                      >
                         First name:
                       </label>
                       <input
@@ -126,7 +130,10 @@ export default function BookingCreationModal({
                         maxLength={30}
                         required
                       />
-                      <label htmlFor="lastName" className="pr-2">
+                      <label
+                        htmlFor={`lastName-guest${guest.id}`}
+                        className="pr-2"
+                      >
                         Last name:
                       </label>
                       <input
@@ -138,7 +145,10 @@ export default function BookingCreationModal({
                         maxLength={30}
                         required
                       />
-                      <label htmlFor="email" className="pr-2">
+                      <label
+                        htmlFor={`email-guest${guest.id}`}
+                        className="pr-2"
+                      >
                         Email address:
                       </label>
                       <input

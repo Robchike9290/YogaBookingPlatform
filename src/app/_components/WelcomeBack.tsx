@@ -8,12 +8,11 @@ export default function WeclomeBack() {
 
   useEffect(() => {
     profileData.forEach((profile) => {
-      console.log(profile.firstName);
       if (profile.userName === currentUser) {
-        setFirstName("test");
+        setFirstName(profile.firstName);
       }
     });
-  });
+  }, [currentUser]);
 
   return (
     <>

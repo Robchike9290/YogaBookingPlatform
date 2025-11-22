@@ -14,8 +14,8 @@ export function PlatformContextProvider({ children }: { children: ReactNode }) {
   // TODO: Remove this state, currentUser can express whather someone is logged in too.
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // TODO: Set this as a unique ID, not a name in order to improve security.
-  const [currentUser, setCurrentUser] = useState("Delcine Majeed");
+  // TODO: Ensure this value is unique when you do the DB implementation.
+  const [currentUser, setCurrentUser] = useState("meow");
   // const [currentUser, setCurrentUser] = useState("");
   const [currentDate, setCurrentDate] = useState(Date());
   const [currentStudioName, setCurrentStudioName] = useState(
