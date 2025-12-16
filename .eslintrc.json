@@ -1,13 +1,16 @@
 {
   "extends": ["plugin:tailwindcss/recommended"],
-  "plugins": ["tailwindscss"],
+  "plugins": ["tailwindcss"],
   "rules": {
     "tailwindcss/classnames-order": "on"
   },
-  "typescript": {
-    "extends": ["plugin:tailwindcss/recommended"],
-    "rules": {
-      "tailwindcss/classnames-order": "on"
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:tailwindcss/recommended"],
+      "rules": {
+        "tailwindcss/classnames-order": 1
+      }
     }
-  }
+  ]
 }
