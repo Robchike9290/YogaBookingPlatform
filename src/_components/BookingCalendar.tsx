@@ -30,6 +30,7 @@ export default function BookingCalendar({
           title={monthlyTitle}
           subtitle={monthlySubtitle}
           setCurrentDate={setCurrentDate}
+          currentDate={currentDate}
         />
       </div>
       <div className="m-4 flex-1 rounded-lg bg-blue-300 shadow-lg">

@@ -18,7 +18,7 @@ export default function DailyClassCalendar(props: SubcalendarProps) {
       <h1 className="text-3xl font-bold">
         {props.title} {props.currentDate}:
       </h1>
-      <h2 className="font-bold">{props.subtitle}</h2>
+      <h2 className="text-2xl font-bold">{props.subtitle}</h2>
       <div className="max-h-72 overflow-auto">
         {dummyClassData.map((classData) => {
           if (props.currentDate === classData.date) {
